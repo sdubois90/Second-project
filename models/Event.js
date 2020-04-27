@@ -49,10 +49,8 @@ const eventSchema = new Schema({
   },
   theme: String,
 
-  image: {
-    type: String,
-    default: "./images/default_event.PNG"
-  },
+  imgName: String,
+  imgPath: { type: String, default: "./images/default_event.PNG"},
 
   restrictions: {
     type: Schema.Types.ObjectId,
