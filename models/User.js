@@ -8,12 +8,15 @@ const userSchema = new Schema({
   password: {type: String, required: true},
   dateOfBirth: Date,
   address: {
-      street: String,
+    street: String,
     city: String
 },
-description: String,
-profilePicture: {type: String, default: "./images/default_user.PNG" },
-restrictions: { type: Schema.Types.ObjectId, ref: "Tag" }
+  description: String,
+  
+  profilePictureName: String,
+  profilePicturePath: { type: String, default: "./images/default_user.PNG" },
+  
+  restrictions: { type: Schema.Types.ObjectId, ref: "Tag" }
 
 });
 
