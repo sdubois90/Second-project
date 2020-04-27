@@ -1,9 +1,10 @@
 <section >
     <h1>Join the community!</h1>
-    {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-    {{/if}}
+
     <form method="post" action="/signup">
+        {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+        {{/if}}
         <div>
             <label for="firstname" class="label-ref label">Name</label>
             <input id="firstname" type="text" name="firstName"  value="Albert">

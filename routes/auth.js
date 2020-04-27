@@ -23,7 +23,7 @@ router.post('/signup', (req, res, next) => {
         .then((dbResult) => {
             if (dbResult !== null) {
                 res.render('signup', {
-                    errorMessage: 'Account already exist...'
+                    errorMessage: 'This email is already used'
                 });
                 return
             }
@@ -76,7 +76,7 @@ router.post('/login', (req, res, next) => {
 
             if (!dbResult) {
                 res.render('login', {
-                    errorMessage: 'Bad account...'
+                    errorMessage: "We can't find you "
                 });
                 return
             }
@@ -86,7 +86,7 @@ router.post('/login', (req, res, next) => {
                 res.redirect('/')
             } else {
                 res.render('login', {
-                    errorMessage: 'Bad account...'
+                    errorMessage: "We can't find you"
                 })
             }
         })
