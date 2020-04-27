@@ -1,0 +1,26 @@
+<section >
+    <h1>Join the community!</h1>
+    {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+    {{/if}}
+    <form method="post" action="/signup">
+        <div>
+            <label for="firstname" class="label-ref label">Name</label>
+            <input id="firstname" type="text" name="firstName"  value="Albert">
+        </div>
+        <div>
+            <label for="lastname" class="label-ref label">Last Name</label>
+            <input id="lastname" type="text"  name="lastName" value="le Dromadaire">
+        </div>
+        <div>
+            <label for="email" >Email</label>
+            <input id="email" type="email" name="email"  value="albertledromadaire@gmail.com">
+        </div>
+        <div>
+            <label for="password" >Password</label>
+            <input id="password" type="password"  name="password"  value="1234">
+        </div>
+        <button>Create Account</button>
+    </form>
+    <p>Already have an account ? <a href="/login">Log In</a></p>
+</section>
