@@ -1,8 +1,156 @@
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top:5px;
+  padding-bottom:5px;
+  background-color:#f5cac3;
 }
 
 a {
   color: #00B7FF;
+}
+
+nav {
+  width:99.5vw;
+  margin:0 auto;
+  border-radius: 15px;
+  background-color: #f28482;
+  padding:12px 0;
+}
+
+.flex {
+  display:flex;
+  justify-content: center;
+}
+
+.ul {
+  list-style-type: none;
+}
+
+li {
+  padding:0 10px;
+  width:20vmin;
+}
+
+.ul li a {
+  min-width:5vmin;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  border-radius: 50px;
+  background-color:#f9ba54;
+  padding:1vh 2vw;
+  display:block;
+  font-size:1.1em;
+  text-decoration: none;
+  color:white;
+  font-weight: bolder;
+}
+
+/* Animation */
+.ul li a:hover {
+  background-color: #02c39a;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(-15deg);
+}
+
+.ul li a {
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .2s ease-in-out;
+}
+/* End animation */
+
+#blank1 {
+  width:2vw
+}
+
+#blank {
+  width:6vw
+}
+
+@media only screen and (max-width:1500px) {
+  body {
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top:5px;
+  padding-bottom:5px
+}
+li {
+  padding:0 10px;
+  width:25vmin;
+}
+.ul li a {
+  min-width:5vmin;
+  width:100%;
+  text-align: center;
+  border-radius: 50px;
+  background-color:#f9ba54;
+  padding:1vh 0;
+  display:block;
+  font-size:1.1em;
+  text-decoration: none;
+  color:white;
+  font-weight: bolder;
+}
+}
+
+@media only screen and (max-width:1100px) {
+  body {
+  font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top:5px;
+  padding-bottom:5px
+}
+li {
+  padding:0 10px;
+  width:25vmin;
+}
+.ul li a {
+  min-width:10vmin;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  border-radius: 50px;
+  background-color:#f9ba54;
+  padding:1vh 1.5vw;
+  display:block;
+  font-size:1.1em;
+  text-decoration: none;
+  color:white;
+  font-weight: bolder;
+}
+#blank {
+  width:0vw
+}
+}
+
+@media only screen and (max-width:750px) {
+  body {
+  font: 9px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top:5px;
+  padding-bottom:5px
+}
+li {
+  padding:0 7px;
+  width:20vmin;
+}
+.ul li a {
+  min-width:4vmin;
+  width:100%;
+  text-align: center;
+  border-radius: 50px;
+  background-color:#f9ba54;
+  padding:1vh 0;
+  display:block;
+  font-size:1.1em;
+  text-decoration: none;
+  color:white;
+  font-weight: bolder;
+}
+#blank {
+  width:2.5vw
+}
 }
