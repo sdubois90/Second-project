@@ -16,7 +16,7 @@ const userSchema = new Schema({
   profilePictureName: String,
   profilePicturePath: { type: String, default: "./images/default_user.PNG" },
   
-  restrictions: { type: Schema.Types.ObjectId, ref: "Tag" }
+  restrictions: [{ type: Schema.Types.ObjectId, ref: "Tag" }]
 
 });
 
