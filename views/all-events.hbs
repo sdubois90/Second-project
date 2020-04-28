@@ -7,16 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  
-</body>
-</html>
-
 
 
 <div class="main-contents-events">
   <div class="title-div">
-    <h2 class="events-title">Description</h2>
+
+    <h1 class="events-title">All Events</h1>
   </div>
+
   <section class="events-wrapper">
 
     {{#each allEvents}}
@@ -28,9 +26,13 @@
       <h4 class="events-title">{{this.type}}</h4>
       <p>Date{{this.date}}</p>
       <p>Diet{{this.restrictions}}</p>
-      <p><a href="">See more</a></p>
+      <p><a href="/one-event">See more</a></p>
     </div>
     {{/each}}
 
   </section>
 </div>
+
+  
+</body>
+</html>

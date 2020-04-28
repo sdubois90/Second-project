@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/dbconnect");
+require("./helpers/helpers-hbs");
 
 var createError = require('http-errors');
 var express = require('express');
@@ -67,6 +68,7 @@ app.use('/', usersRouter);
 app.use('/', authRouter);
 app.use('/', require('./routes/crud'));
 app.use("/allevents", require("./routes/allevents"));
+app.use("/", require("./routes/managepage"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
