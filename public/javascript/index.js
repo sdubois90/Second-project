@@ -1,3 +1,6 @@
+// This is a loop over all the "a" elements of layout.hbs
+// Will replace it with a sound to clean my code there
+
 // window.addEventListener("load", function () {
 //     var soundOnButton = document.querySelectorAll("a");
 //     soundOnButton.forEach(element => {
@@ -6,6 +9,10 @@
 //         }
 //     })
 // });
+
+// ---------------------------------------------------------
+
+// Tring to get the howler work:
 
 // import { Howl, Howler } from 'howler';
 

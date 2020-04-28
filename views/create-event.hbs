@@ -1,37 +1,62 @@
 
 <section>
+
     <form id="form" action="/create-event" method="POST" enctype="multipart/form-data">
-        <h1>Event</h1>
+        <h1>Creating my Event:</h1>
         <div>
-            <label for="name">Event name</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name">Name of my event</label>
+            <input type="text" id="name" name="name" placeholder="Forest Cake in my Garden" value="Forest Cake in my Garden" required>
+        </div>
+        <div>
+            <label for="type">Meal type</label>
+            <select name="type" id="type" required>
+                <option value="-1" disabled selected>Choose one meal</option>
+                <option value="breakfast" selected>Breakfast</option>
+                <option value="brunch">Brunch</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
         </div>
         <div>
             <h3>Menu: if only 1 course, then use the 'Main' input</h3>
-            <label for="menu"></label>
-            <input type="text" id="menu" name="menu">
+            <label for="starter">Starter</label>
+            <input type="text" id="starter" name="starter" placeholder="Tomato mozarella" value="Tomato mozarella">
+            <label for="main">Main</label>
+            <input type="text" id="main" name="main" placeholder="Boeuf Bourguignon" value="Boeuf Bourguignon" required>
+            <label for="dessert">Dessert</label>
+            <input type="text" id="dessert" name="dessert" placeholder="Chocolate Banana cake">
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" id="" name="">
+            <h3>Time</h3>
+            <label for="date">Date of the event</label>
+            <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="2020-01-03" required>
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" id="" name="">
+            <h3>Address of the event: street and city</h3>
+            <input type="text" id="street" name="street" placeholder="rue du Boulanger" value="rue du Boulanger" required>
+            <input type="text" id="city" name="city" placeholder="Paris" value="Paris" required>
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" id="" name="">
+            <h3>Guests</h3>
+            <label for="peopleNumber">Number of guests</label>
+            <input type="number" id="peopleNumber" name="peopleNumber" min="1" max="20" placeholder="1" value="2" required>
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" id="" name="">
+            <label for="price">Cost per guest in € (0 would be free)</label>
+            <input type="number" id="price" name="price" min="0" max="300" placeholder="10" value="10" required>
         </div>
         <div>
-            <label for=""></label>
-            <input type="text" id="" name="">
+            <h3>BONUS (optional)</h3>
+            <label for="theme">Add a feast's theme?</label>
+            <input type="text" id="theme" name="theme" placeholder="Renaissance costumes">
+            <label class="label" for="image">Add a picture?</label>
+            <input type="file" id="image" name="image">
+            <label class="label" for="information">Complementary information:</label>
+            <textarea name="information" id="information" name="information" placeholder="I have 2 fat angry dogs
++ a 'dromadaire' called Nelly" rows="10"></textarea>
         </div>
 
         <button>Yummy (｡◕‿◕｡)</button>
     </form>
+    
 </section>
