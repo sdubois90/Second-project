@@ -6,7 +6,9 @@ const User = require('../models/User')
 const bcryptSalt = 10;
 
 router.get("/signup", (req, res) => {
-    res.render("signup");
+    res.render("signup", {
+        styles: ["signup_login_style.css"],
+    });
 });
 
 router.post('/signup', (req, res, next) => {
@@ -53,7 +55,9 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.get("/login", (req, res) => {
-    res.render("login");
+    res.render("login", {
+        styles: ["signup_login_style.css"],
+    });
 })
 
 router.post('/login', (req, res, next) => {
