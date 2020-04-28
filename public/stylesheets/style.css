@@ -13,14 +13,6 @@ body {
 }
 
 
-section{
-  background-image: url("../images/home.jpeg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
 a {
   color: #00B7FF;
 }
@@ -30,7 +22,7 @@ nav {
   margin:0 auto;
   /* border-radius: 15px; */
   background-color: rgba(255, 255, 255, 0.8);
-  position:absolute;
+  position:fixed;
   width:100vw;
   padding:12px 0;
 }
@@ -72,7 +64,7 @@ li {
 }
 
 .ul li a {
-  -webkit-transition: -webkit-transform .8s ease-in-out;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
 }
 /* End animation */
