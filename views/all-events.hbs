@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/allevents.css' />
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+
+
+<div class="main-contents-events">
+  <div class="title-div">
+    <h2 class="events-title">Description</h2>
+  </div>
+  <section class="events-wrapper">
+
+    {{#each allEvents}}
+    <div class="events-info">
+
+      <img class="img_events_all" src="{{this.imgPath}}" alt="events_img">
+
+      <h3>{{this.eventName}}</h3>
+      <h4 class="events-title">{{this.type}}</h4>
+      <p>Date{{this.date}}</p>
+      <p>Diet{{this.restrictions}}</p>
+      <p><a href="">See more</a></p>
+    </div>
+    {{/each}}
+
+  </section>
+</div>
