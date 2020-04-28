@@ -9,6 +9,7 @@ body {
   /* padding-top:5px;
   padding-bottom:5px; */
   background-color:#f5cac3;
+  position:relative
 }
 
 
@@ -28,7 +29,9 @@ nav {
   /* width:99.5vw; */
   margin:0 auto;
   /* border-radius: 15px; */
-  background-color: #f28482;
+  background-color: rgba(255, 255, 255, 0.8);
+  position:absolute;
+  width:100vw;
   padding:12px 0;
 }
 
