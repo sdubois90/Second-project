@@ -1,5 +1,5 @@
 <h1>Tell us more about you {{user.firstName}}</h1>
-<form action="/myprofile" method="post">
+<form action="/myprofile" method="post" enctype="multipart/form-data">
 <div>
     <label for="firstName">First name</label>
     <input type="text" name="firstName" value="{{user.firstName}}">
@@ -19,11 +19,15 @@
 <p>Adress :</p>
 <div>
     <label for="street">Street</label>
-    <input type="text" name="street" value="{{user.adress.street}}">
+    <input type="text" name="street" value="{{user.address.street}}">
 </div>
 <div>
     <label for="city">City</label>
-    <input type="text" name="city" value="{{user.adress.city}}">
+    <input type="text" name="city" value="{{user.address.city}}">
+</div>
+<div>
+    <label for="description">About me</label>
+    <input type="text" name="description" value="{{user.description}}">
 </div>
 <div>
     <label for="profilePicturePath">Profile picture</label>
@@ -32,7 +36,7 @@
 <div >
     <label for="restrictions">Food restrictions</label>
     <select multiple name="restrictions">
-        <option value="-1" disabled selected>Choose a food restriction</option>
+        <option value="-1" disabled selected>None</option>
         {{#each tags}}
         <option {{isSelected ../user.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}</option>
         {{/each}}

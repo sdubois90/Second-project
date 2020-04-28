@@ -47,20 +47,23 @@ const eventSchema = new Schema({
     type: Number,
     required: true
   },
+
   theme: String,
+  
+  information:String,
 
   imgName: String,
   imgPath: { type: String, default: "./images/default_event.PNG"},
 
-  restrictions: {
+  restrictions: [{
     type: Schema.Types.ObjectId,
     ref: "Tag"
-  },
+  }],
 
-  guests: {
+  guests: [{
     type: Schema.Types.ObjectId,
     ref: "User"
-  }
+  }]
 
 });
 
