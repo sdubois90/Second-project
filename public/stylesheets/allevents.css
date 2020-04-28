@@ -1,0 +1,28 @@
+.main-contents-events {
+    border: 1px solid black;
+    font-family: Arial;
+    display: block;
+  }
+  
+  .title-div {
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+  }
+  
+  .events-wrapper{
+    display: flex;
+  }
+  
+  .events-info{
+    border: 1px solid black;
+    flex-direction: row;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    margin: auto;
+  }
+  
+  .img_events_all {
+    width: 100px;
+  }
