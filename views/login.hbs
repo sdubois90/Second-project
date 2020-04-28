@@ -1,7 +1,8 @@
 
 <section>
-        <h1>Happy to see you again</h1>
+       
     <form method="post" action="/login">
+    <h1>Happy to see you again</h1>
         {{#if errorMessage}}
         <p>{{errorMessage}}</p>
         {{/if}}
@@ -14,6 +15,7 @@
             <input id="password" type="password"required name="password" value="1234">
         </div>
         <button>Log in !</button>
+        <p>Don't have an account yet ? </p>
+        <a href="/signup">Sign Up</a>
     </form>
-    <p >Don't have an account yet ? <a href="/signup" >Sign Up</a></p>
 </section>

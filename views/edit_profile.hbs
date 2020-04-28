@@ -1,0 +1,43 @@
+<h1>Tell us more about you {{user.firstName}}</h1>
+<form action="/myprofile" method="post">
+<div>
+    <label for="firstName">First name</label>
+    <input type="text" name="firstName" value="{{user.firstName}}">
+</div>
+<div>
+    <label for="lastName">Last name</label>
+    <input type="text" name="lastName" value="{{user.lastName}}">
+</div>
+<div>
+    <label for="email">Email</label>
+    <input type="email" name="email" value="{{user.email}}">
+</div>
+{{!-- <div>
+    <label for="password">password</label>
+    <input type="password" name="password" value="{{user.password}}">
+</div> --}}
+<p>Adress :</p>
+<div>
+    <label for="street">Street</label>
+    <input type="text" name="street" value="{{user.adress.street}}">
+</div>
+<div>
+    <label for="city">City</label>
+    <input type="text" name="city" value="{{user.adress.city}}">
+</div>
+<div>
+    <label for="profilePicturePath">Profile picture</label>
+    <input type="file" name="profilePicturePath" value="{{user.profilePicturePath}}">
+</div>
+<div >
+    <label for="restrictions">Food restrictions</label>
+    <select multiple name="restrictions">
+        <option value="-1" disabled selected>Choose a food restriction</option>
+        {{#each tags}}
+        <option {{isSelected ../user.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}</option>
+        {{/each}}
+    </select>
+</div>
+<button>Modify my profile</button>
+
+</form>
