@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-// SESSION SETUP
+// SESSION SETUP for authentification (cookies)
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -44,10 +44,29 @@ app.use(
   })
 );
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/', authRouter);
 
+// ACCESS THE USER INFO FROM THE VIEWS THANKS TO res.locals.variable
+app.use((req, res, next) => {
+  // console.log(req.session.currentUser, "----- user session");
+  // we defined this key inside router.post("/signin").
+  if (req.session.currentUser) {
+    // res.locals.YOURVARIABLE is a way to define variables accessible
+    // to the template (hbs) during the request / response cycle.
+    // We can reference this variable in our template, it allows us to 
+    // Know if a user is loggedIn, can be used to do render certain parts of the layout :)
+    res.locals.user = req.session.currentUser // Allows us to access user info with the user key in the template
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.isLoggedIn = false;
+  }
+  next();
+});
+
+app.use('/', indexRouter);
+app.use('/', usersRouter);
+app.use('/', authRouter);
+app.use('/', require('./routes/crud'));
+app.use("/allevents", require("./routes/allevents"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
