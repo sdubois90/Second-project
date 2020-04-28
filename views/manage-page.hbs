@@ -15,10 +15,25 @@
     <h1 class="events-title">Manage Your Events</h1>
   </div>
 
-  <section class="events-wrapper">
+{{!-- Sébastien's part --}}
+
+{{!-- <h1>Here are your events</h1>
+<div style="display:flex;flex-wrap:wrap">
+  {{#each events}}
+  <div style="width:20%">
+    <img style="width:20%;height:auto" src="{{this.imgPath}}" alt="">
+    <h4>{{this.eventName}}</h4>
+    <p>{{this.dateOfEvent}}</p>
+  </div>
+  {{else}}
+  <p>You have no planned event at the moment</p>
+  {{/each}}
+</div> --}}
+
+    <section class="events-wrapper" style="flex-wrap: wrap;">
 
     {{#each allEvents}}
-    <div class="events-info">
+    <div class="events-info" style="width:18%; margin:1%">
         <p>As a Host</p>
 
       <img class="img_events_all" src="{{this.imgPath}}" alt="events_img">
