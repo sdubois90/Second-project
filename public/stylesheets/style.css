@@ -76,8 +76,8 @@ li {
 @media only screen and (max-width:1500px) {
   body {
   font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding-top:5px;
-  padding-bottom:5px
+  /* padding-top:5px;
+  padding-bottom:5px */
 }
 li {
   padding:0 10px;
@@ -101,8 +101,8 @@ li {
 @media only screen and (max-width:1100px) {
   body {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding-top:5px;
-  padding-bottom:5px
+  /* padding-top:5px;
+  padding-bottom:5px */
 }
 li {
   padding:0 10px;
@@ -130,8 +130,8 @@ li {
 @media only screen and (max-width:750px) {
   body {
   font: 9px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding-top:5px;
-  padding-bottom:5px
+  /* padding-top:5px;
+  padding-bottom:5px */
 }
 li {
   padding:0 7px;
