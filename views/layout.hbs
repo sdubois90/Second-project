@@ -3,6 +3,9 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    {{#each styles}}
+    <link rel="stylesheet" href="/stylesheets/{{this}}">
+    {{/each}}
     <script src="./javascript/index.js"></script>
   </head>
   <body>
