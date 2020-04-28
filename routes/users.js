@@ -4,6 +4,7 @@ const User = require('../models/User')
 const Tag = require('../models/Tag')
 const upload = require("../config/cloudinary");
 
+
 // router.get('/myprofile', (req, res) => {
 //   console.log(req.session.currentUser)
 //   let user = req.session.currentUser
@@ -40,6 +41,7 @@ router.post('/myprofile', upload.single("profilePicturePath"),(req, res) => {
     console.log(req.file)
     modifiedUser.profilePicturePath = req.file.secure_url;
   }
+  
   console.log(modifiedUser)
   User.findOneAndUpdate(req.params.id, modifiedUser, { new: true, useFindAndModify: true })
     .then((dbresult) => {

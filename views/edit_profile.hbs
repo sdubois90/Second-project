@@ -36,7 +36,7 @@
 <div >
     <label for="restrictions">Food restrictions</label>
     <select multiple name="restrictions">
-        <option value="-1" disabled selected>Choose a food restriction</option>
+        <option value="-1" disabled selected>None</option>
         {{#each tags}}
         <option {{isSelected ../user.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}</option>
         {{/each}}
