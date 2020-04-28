@@ -3,8 +3,51 @@
   <head>
     <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    {{#each styles}}
+    <link rel="stylesheet" href="/stylesheets/{{this}}">
+    {{/each}}
+    <script src="./javascript/index.js"></script>
   </head>
   <body>
+    
+    <header>
+
+      <nav class="flex">
+        <div id="blank1"></div>
+        <div>
+          <ul class="ul flex">
+            <li>
+              <a href="/" onmousedown="bleep.play()"><span>Our logo</span></a>
+            </li>
+            <li>
+              <a href="" onmousedown="bleep.play()"><span>Events</span></a>
+            </li>
+            <li>
+              <a href="" onmousedown="bleep.play()"><span>Create event</span></a>
+            </li>
+            <li>
+              <a href="" onmousedown="bleep.play()"><span>My events</span></a>
+            </li>
+            <li>
+              <a href="" onmousedown="bleep.play()"><span>My profile</span></a>
+            </li>
+            <div id="blank"></div>
+            <li>
+              <a href="" onmousedown="bleep.play()"><span>Signup</span></a>
+            </li>
+            <li>
+              <a href="" onmousedown="bleep.play()"><span>Login</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </header>
+
     {{{body}}}
+    <script>
+      var bleep = new Audio();
+      bleep.src = "/sounds/click.mp3";
+    </script>
   </body>
 </html>

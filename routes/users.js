@@ -1,9 +1,18 @@
 var express = require('express');
 var router = express.Router();
+const User = require('../models/User')
+const Tag = require('../models/Tag')
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// router.get('/myprofile', (req, res) => {
+//   console.log(req.session.currentUser)
+//   let user = req.session.currentUser
+//   res.render('edit_profile', {
+//     user:user
+//   });
+// });
+
+router.get('/myprofile', (req, res) => {
+  res.render('edit_profile');
 });
 
 module.exports = router;
