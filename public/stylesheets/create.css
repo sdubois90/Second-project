@@ -5,11 +5,35 @@
 }
 
 section {
-    padding: 25px;
+    padding: 6vmin;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+    @media only screen and (max-width:1400px) and (min-width:1301px){
+    .section {
+    padding-top:9vmin;
+  }
+  }
+
+  @media only screen and (max-width:1300px) and (min-width:1050px){
+    .section {
+    padding-top:8vmin;
+  }
+  }
+
+  @media only screen and (max-width:768px) {
+    .section {
+    padding-top:10vmin;
+  }
+  }
+
+    @media only screen and (max-width:640px) {
+    .section {
+    padding-top:17.5vmin;
+  }
+  }
 
 a {
   color: #00B7FF;

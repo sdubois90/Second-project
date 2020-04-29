@@ -6,10 +6,43 @@
   }
   
   .title-div {
+    padding-top:6vmin;
     background-color: lightblue;
     color: white;
     text-align: center;
   }
+
+    .events-title {
+      padding: 20px 0;
+  }
+
+    @media only screen and (max-width:1400px) and (min-width:1301px){
+    .title-div {
+    padding-top:9vmin;
+  }
+  }
+
+  @media only screen and (max-width:1300px) and (min-width:1050px){
+    .title-div {
+    padding-top:8vmin;
+  }
+  }
+
+  @media only screen and (max-width:768px) {
+    .title-div {
+    padding-top:10vmin;
+  }
+    .events-title {
+      padding-top: 3px;
+  }
+  }
+
+    @media only screen and (max-width:640px) {
+    .title-div {
+    padding-top:17.5vmin;
+  }
+  }
+
 
   .events-wrapper{
     display: flex;
@@ -19,10 +52,6 @@
     margin: 10px;
   }
   
-  .events-title {
-      padding: 20px;
-  }
-
   .events-info{
     padding: 20px;
     text-align: center;

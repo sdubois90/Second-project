@@ -3,7 +3,7 @@ var router = express.Router();
 const User = require('../models/User')
 const Tag = require('../models/Tag')
 const upload = require("../config/cloudinary");
-
+const requireAuth = require("../middlewares/requireAuth");
 
 // router.get('/myprofile', (req, res) => {
 //   console.log(req.session.currentUser)
@@ -13,10 +13,11 @@ const upload = require("../config/cloudinary");
 //   });
 // });
 
-router.get('/myprofile', (req, res) => {
+router.get('/myprofile', requireAuth,(req, res,) => {
   Tag.find({})
     .then((dbresult) => {
       res.render('edit_profile', {
+        styles: ["edit_profile.css"],
         tags: dbresult
       });
     })
@@ -25,7 +26,20 @@ router.get('/myprofile', (req, res) => {
     })
 });
 
-router.post('/myprofile', upload.single("profilePicturePath"),(req, res) => {
+router.get('/member/:id', requireAuth,(req, res) => {
+  User.findById(req.params.id)
+    .then((dbresult) => {
+      res.render('one_profile', {
+        styles: ["one_profile.css"],
+        theUser: dbresult
+      });
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+});
+
+router.post('/myprofile', requireAuth, upload.single("profilePicturePath"), (req, res) => {
   let modifiedUser = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -52,5 +66,8 @@ router.post('/myprofile', upload.single("profilePicturePath"),(req, res) => {
     console.log(err)
   })
 })
+
+
+
 
 module.exports = router;

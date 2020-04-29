@@ -16,31 +16,31 @@
         <div>
           <ul class="ul flex">
             <li>
-              <a href="/" onmousedown="bleep.play()"><span>Our logo</span></a>
+              <a href="/"><span>Our logo</span></a>
             </li>
             <li>
-              <a href="/allevents" onmousedown="bleep.play()"><span>Events</span></a>
+              <a href="/allevents"><span>Events</span></a>
             </li>
             {{#if isLoggedIn}}
             <li>
-              <a href="/create-event" onmousedown="bleep.play()"><span>Create event</span></a>
+              <a href="/create-event"><span>Create event</span></a>
             </li>
             <li>
-              <a href="/managepage" onmousedown="bleep.play()"><span>My events</span></a>
+              <a href="/managepage"><span>My events</span></a>
             </li>
             <li>
-              <a href="/myprofile" onmousedown="bleep.play()"><span>My profile</span></a>
+              <a href="/myprofile"><span>My profile</span></a>
             </li>
             <li>
-              <a href="/logout" onmousedown="bleep.play()"><span>Logout</span></a>
+              <a href="/logout"><span>Logout</span></a>
             </li>
             <div id="blank"></div>
             {{else}}
             <li>
-              <a href="/signup" onmousedown="bleep.play()"><span>Signup</span></a>
+              <a href="/signup"><span>Signup</span></a>
             </li>
             <li>
-              <a href="/login" onmousedown="bleep.play()"><span>Login</span></a>
+              <a href="/login"><span>Login</span></a>
             </li>
             {{/if}}
           </ul>
@@ -49,9 +49,5 @@
 
     </header>
     {{{body}}}
-    <script>
-      var bleep = new Audio();
-      bleep.src = "/sounds/click.mp3";
-    </script>
   </body>
 </html>
