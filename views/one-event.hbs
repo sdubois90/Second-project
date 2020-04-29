@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/one-event.css' />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="main-contents-one-event">
+        <div class="title-div">
+
+            <h1 class="one-event-title">Event details</h1>
+        </div>
+
+        <section class="one-event-wrapper">
+            <div class="img-div">
+                <img class="img" src="{{event.imgPath}}" alt="one_event_main_img">
+                <img class="img" src="{{event.imgPath}}" alt="one_event_host_img">
+                <img class="img" src="{{event.imgPath}}" alt="one_event_food_img">
+                </div>
+
+            <div class="one-event-info">
+
+                
+                <h2>{{event.eventName}}</h3>
+                <h3>{{event.type}}</h3>
+                 <h4>Date</h4>
+      <p>{{this.dateOfEvent}}</p>
+                <h4>Menu</h4>
+                <h5>Starter</h5>
+                <p>{{event.menu.starter}}</p>
+                <h5>Main</h5>
+                <p>{{event.menu.main}}</p>
+                <h5>Dessert</h5>
+                <p>{{event.menu.dessert}}</p>
+                <h4>Location</h4>
+                <p>{{event.location.city}}</p>
+
+                <h4>Maximum number of participants</h4>
+                <p>{{event.maxPeople}}</p>
+                <h4>Price per person</h4>
+                <p>{{event.pricePP}} EUR</p>
+                <h4>Theme of the event</h4>
+                <p>{{event.theme}}</p>
+                <h4>"Restrictions"</h4>
+                <p>{{event.restrictions}}</p>
+
+            </div>
+            <div class="buttons-div">
+                <button>Details about the Chef</button>
+                <p>Join the event</p>
+                <button>You need to be logged in</button>
+            </div>
+
+        </section>
+
+    </div>
+
+
+</body>
+
+</html>

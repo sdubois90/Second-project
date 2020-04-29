@@ -1,0 +1,62 @@
+
+.main-contents-one-event {
+
+    border: 1px solid black;
+    font-family: Arial;
+    display: block;
+  }
+  
+  .title-div {
+
+    color: white;
+    text-align: center;
+  }
+
+  .one-event-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  .one-event-title {
+      padding: 20px;
+  }
+
+  .one-event-info{
+    padding: 20px;
+    text-align: center;
+    width: 23%;
+    margin: auto;
+    border: 1px solid black;
+  }
+  
+  .img_one_event_main {
+    height: 200px;
+  }
+
+  .img-div{
+    display: flex;
+    flex-direction: column;
+    
+    border: 1px solid red;
+  }
+
+.buttons-div{
+  border: 1px solid red;
+  align-items: left;
+}
+
+h4{
+  height: 30px;
+}
+
+p {
+  padding: 0 0 15px;
+}
+
+img {
+  height: 200px;
+}

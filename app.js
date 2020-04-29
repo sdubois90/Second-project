@@ -67,7 +67,7 @@ app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', authRouter);
 app.use('/', require('./routes/crud'));
-app.use("/allevents", require("./routes/allevents"));
+app.use("/", require("./routes/allevents"));
 app.use("/", require("./routes/managepage"));
 
 // catch 404 and forward to error handler

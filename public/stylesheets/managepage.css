@@ -37,16 +37,17 @@
   }
 
   p {
-
-      height: 45px;
-
+    height: 45px;
   }
 
 button {
-    padding: 20px;
+    padding: 10px 20px;
+   
 }
   
-
+h2 {
+  text-align: center;
+}
 
   
   

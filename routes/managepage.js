@@ -17,23 +17,23 @@ router.get("/managepage", (req, res) => {
       });
   });
 
-  router.get("/manage-edit/:id", (req, res) => {
+//   router.get("/manage-edit/:id", (req, res) => {
 
-    Event.find().then((dbResultEvents) => {
-        User.findById(req.params.id)
-        .populate("User")
-        .then((dbResult) => {
+//     Event.find().then((dbResultEvents) => {
+//         User.findById(req.params.id)
+//         .populate("users")
+//         .then((dbResult) => {
             
-            res.render("/manage-page", {
-                events: dbResultEvents,
-                users: dbResult,
-            });
-        })
-        .catch((dbErr) => {
-            console.log(dbErr)
-    });
-  }); 
-});
+//             res.render("/manage-page", {
+//                 events: dbResultEvents,
+//                 users: dbResult,
+//             });
+//         })
+//         .catch((dbErr) => {
+//             console.log(dbErr)
+//     });
+//   }); 
+// });
   
 // router.get("/manage-delete/:id", (req, res) => {
  
