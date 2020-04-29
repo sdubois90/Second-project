@@ -6,9 +6,9 @@ var createError = require('http-errors');
 const User = require('../models/User');
 const Event = require('../models/Event');
 const Tag = require('../models/Tag');
+const requireAuth = require("../middlewares/requireAuth");
 
-
-router.get('/my-events', (req, res) => {
+router.get('/my-events', requireAuth, (req, res) => {
     Event.find({})
         .then(dbResult => {
             res.render('my-events.hbs', {
@@ -22,13 +22,13 @@ router.get('/my-events', (req, res) => {
 
 
 
-router.get('/create-event', (req, res) => {
+router.get('/create-event', requireAuth, (req, res) => {
     res.render('create-event.hbs', {
         styles: ['create.css']
     });
 });
 
-router.post('/create-event', uploadCloud.single('image'), (req, res) => {
+router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res) => {
     Event.find({})
         .then(dbResult => {
             const {

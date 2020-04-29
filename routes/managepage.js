@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 const Event = require("../models/Event");
 const User = require("../models/User");
+const requireAuth = require("../middlewares/requireAuth");
 
-router.get("/managepage", (req, res) => {
+router.get("/managepage", requireAuth, (req, res) => {
   
     Event.find({ })
       .then((dbResult) => {
@@ -17,7 +18,7 @@ router.get("/managepage", (req, res) => {
       });
   });
 
-  router.get("/manage-edit/:id", (req, res) => {
+router.get("/manage-edit/:id", requireAuth, (req, res) => {
 
     Event.find().then((dbResultEvents) => {
         User.findById(req.params.id)
