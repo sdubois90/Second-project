@@ -20,7 +20,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
@@ -63,6 +63,29 @@ app.use((req, res, next) => {
   next();
 });
 
+
+// Calling the error message middleware
+app.use(eraseSessionMessage());
+// Custom connect-flash (req.flash) middleware.
+function eraseSessionMessage() {
+  // Closure time baby.
+  var count = 0; // initialize counter in parent scope and use it in inner function
+  return function (req, res, next) {
+    if (req.session.msg) {
+      // only increment if session contains msg
+      if (count) {
+        // if count greater than 0
+        count = 0; // reset counter
+        req.session.msg = null; // reset message
+      }
+      res.locals.msg = req.session.msg; // expose msg to the views ! => you can access it with {{msg}}
+      ++count; // increment counter
+    }
+    next(); // continue to the requested route
+  };
+}
+
+
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', authRouter);
@@ -85,5 +108,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

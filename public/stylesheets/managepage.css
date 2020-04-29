@@ -40,15 +40,22 @@
     height: 45px;
   }
 
+  p>a {
+    padding:10px;
+    background-color: white;
+    text-decoration: none;
+    color:black;
+    border:1px solid lightblue;
+  }
+
 button {
     padding: 10px 20px;
    
 }
-  
-h2 {
+
+h3 {
   text-align: center;
 }
-
   
   
   

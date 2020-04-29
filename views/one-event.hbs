@@ -25,7 +25,12 @@
 
             <div class="one-event-info">
 
-                
+                <h1>
+                    {{#if msg}}
+                        {{msg}}
+                    {{/if}}
+
+                </h1>
                 <h2>{{event.eventName}}</h3>
                 <h3>{{event.type}}</h3>
                  <h4>Date</h4>
@@ -52,7 +57,19 @@
             </div>
             <div class="buttons-div">
                 <button>Details about the Chef</button>
-                <p>Join the event</p>
+
+    {{!-- Appears only if logged in to join an event --}}
+
+                {{#if isLoggedIn}}
+                    {{#unless ../isTheChef}}
+                    <form action="/event/{{event._id}}" method="POST">
+
+                    <button>Join the event</button>
+
+                    </form>
+                    {{/unless}}
+                {{/if}}
+
                 <button>You need to be logged in</button>
             </div>
 

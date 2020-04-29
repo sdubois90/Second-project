@@ -47,6 +47,7 @@ router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res
             } = req.body;
 
             const newEvent = {
+                chef: req.session.currentUser,
                 eventName:name,
                 type,
                 menu: {starter:starter, main:main, dessert:dessert},
@@ -57,7 +58,8 @@ router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res
                 theme,
                 information
             }
-            console.log(newEvent)
+            console.log(req.session.currentUser)
+
             // Besoin de vérifier si req.file pour ajouter à newEneaker,
             // c'est pour ça qu'on ne fait pas directement un Event.create(req.body)
             if (req.file) {

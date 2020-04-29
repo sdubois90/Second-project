@@ -6,7 +6,7 @@ const requireAuth = require("../middlewares/requireAuth");
 
 router.get("/managepage", requireAuth, (req, res) => {
   
-    Event.find({ })
+    Event.find({chef: req.session.currentUser._id })
       .then((dbResult) => {
     console.log(dbResult);
         res.render("manage-page", {
