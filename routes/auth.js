@@ -25,12 +25,14 @@ router.post('/signup', (req, res, next) => {
         .then((dbResult) => {
             if (dbResult !== null) {
                 res.render('signup', {
+                    styles: ["signup_login_style.css"],
                     errorMessage: 'This email is already used'
                 });
                 return
             }
             if (firstName === '' || lastName === '' || email === '' || password === '') {
                 res.render('signup', {
+                    styles: ["signup_login_style.css"],
                     errorMessage: 'Some ingredients are missing :)'
                 });
                 return
@@ -67,6 +69,7 @@ router.post('/login', (req, res, next) => {
 
     if (theEmail === '' || thePassword === '') {
         res.render('login', {
+           styles: ["signup_login_style.css"],
             errorMessage: 'Fill all the fields...'
         });
         return
@@ -80,6 +83,7 @@ router.post('/login', (req, res, next) => {
 
             if (!dbResult) {
                 res.render('login', {
+                    styles: ["signup_login_style.css"],
                     errorMessage: "We can't find you "
                 });
                 return
@@ -90,6 +94,7 @@ router.post('/login', (req, res, next) => {
                 res.redirect('/')
             } else {
                 res.render('login', {
+                    styles: ["signup_login_style.css"],
                     errorMessage: "We can't find you"
                 })
             }
