@@ -19,14 +19,16 @@ router.get("/allevents", (req, res) => {
 router.get("/event/:id", (req, res) => {
   
   Event.findById(req.params.id)
-    .populate("User")
+    .populate("chef")
+    .populate("guests")
     .then((dbResult) => {
+      console.log(dbResult)
       let isTheChef = false;
-      console.log(req.session.currentUser._id, dbResult.chef)
-      if (req.session.currentUser._id === dbResult.chef) {
+      console.log(typeof req.session.currentUser._id, typeof dbResult.chef._id)
+      if (req.session.currentUser._id === dbResult.chef._id.toString()) {
         isTheChef = true;
       }
-
+console.log(isTheChef)
       res.render("one-event", {
         event: dbResult,
         isTheChef: isTheChef

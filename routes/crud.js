@@ -70,7 +70,7 @@ router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res
             Event.create(newEvent)
                 
                 .then(dbResult => {
-                    res.redirect('/my-events')
+                    res.redirect('/managepage')
                 })
                 .catch(dbErr => {
                     console.log(dbErr);
