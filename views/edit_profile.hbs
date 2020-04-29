@@ -1,47 +1,56 @@
-<h1>Tell us more about you {{user.firstName}}</h1>
-<form action="/myprofile" method="post" enctype="multipart/form-data">
-<div>
-    <label for="firstName">First name</label>
-    <input type="text" name="firstName" value="{{user.firstName}}">
-</div>
-<div>
-    <label for="lastName">Last name</label>
-    <input type="text" name="lastName" value="{{user.lastName}}">
-</div>
-<div>
-    <label for="email">Email</label>
-    <input type="email" name="email" value="{{user.email}}">
-</div>
-{{!-- <div>
+<section>
+
+    <form action="/myprofile" method="post" enctype="multipart/form-data">
+        <div>
+            <img src="{{user.profilePicturePath}}" alt="">
+        </div>
+        <div id="form_part">
+            <h1>Tell us more about you {{user.firstName}}</h1>
+
+            <div>
+                <label for="firstName">First name</label>
+                <input type="text" name="firstName" value="{{user.firstName}}">
+            </div>
+            <div>
+                <label for="lastName">Last name</label>
+                <input type="text" name="lastName" value="{{user.lastName}}">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" value="{{user.email}}">
+            </div>
+            {{!-- <div>
     <label for="password">password</label>
     <input type="password" name="password" value="{{user.password}}">
 </div> --}}
-<p>Adress :</p>
-<div>
-    <label for="street">Street</label>
-    <input type="text" name="street" value="{{user.address.street}}">
-</div>
-<div>
-    <label for="city">City</label>
-    <input type="text" name="city" value="{{user.address.city}}">
-</div>
-<div>
-    <label for="description">About me</label>
-    <input type="text" name="description" value="{{user.description}}">
-</div>
-<div>
-    <label for="profilePicturePath">Profile picture</label>
-    <input type="file" name="profilePicturePath" value="{{user.profilePicturePath}}">
-</div>
-<div >
-    <label for="restrictions">Food restrictions</label>
-    <select multiple name="restrictions">
-        <option value="-1" disabled selected>None</option>
-        {{#each tags}}
-        <option {{isSelected ../user.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}</option>
-        {{/each}}
-    </select>
-</div>
-<button>Modify my profile</button>
+            <div>
+                <label for="street">Street</label>
+                <input type="text" name="street" value="{{user.address.street}}">
+            </div>
+            <div>
+                <label for="city">City</label>
+                <input type="text" name="city" value="{{user.address.city}}">
+            </div>
+            <div>
+                <label class="about_me" for="description">About me</label>
+                <input type="text" name="description" value="{{user.description}}">
+            </div>
+            <div>
+                <label for="profilePicturePath">Profile picture</label>
+                <input type="file" name="profilePicturePath" value="{{user.profilePicturePath}}">
 
-</form>
+            </div>
+            <div>
+                <label for="restrictions">Food restrictions</label>
+                <select multiple name="restrictions">
+                    <option value="-1" disabled selected>None</option>
+                    {{#each tags}}
+                    <option {{isSelected ../user.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+            <button>Modify my profile</button>
+        </div>
+    </form>
+</section>

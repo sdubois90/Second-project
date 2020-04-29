@@ -17,6 +17,7 @@ router.get('/myprofile', (req, res) => {
   Tag.find({})
     .then((dbresult) => {
       res.render('edit_profile', {
+        styles: ["edit_profile.css"],
         tags: dbresult
       });
     })
