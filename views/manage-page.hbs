@@ -31,16 +31,23 @@
       {{#each hostEvents}}
       <div class="events-info" style="width:18%; margin:1%">
         <div><img class="img_events_all" src="{{this.imgPath}}" alt="events_img"></div>
-        <div>
-          <h3>{{this.eventName}}</h3>
-          <h4 class="events-title">{{this.type}}</h4>
-          <h4>Date</h4>
-          <p>{{this.dateOfEvent}}</p>
-          <h4>Location</h4>
-          <p>{{this.location.city}}</p>
-          <p><a href="/event/{{this._id}}">See more...</a></p>
-          <button>Cancel</button> <button>Edit</button>
-        </div>
+
+<div>
+        <h3>{{this.eventName}}</h3>
+        <h4 class="events-title">{{this.type}}</h4>
+        <h4>Date</h4>
+        <p>{{this.dateOfEvent}}</p>
+        
+        
+        <h4>Location</h4>
+        <p>{{this.location.city}}</p>
+        
+       
+        <p><a href="/event/{{this._id}}">See more...</a></p>
+     
+
+        <button><a href="/manage-delete/{{this._id}}">Cancel</a> </button> <p><a href="/myevent/edit/{{this._id}}">Edit</a></p>
+</div>
       </div>
       {{/each}}
     </section>
@@ -60,12 +67,13 @@
         <p>{{this.location.city}}</p>
         <h4>"Restrictions"</h4>
         <p>{{this.restrictions}}</p>
-        <p><a href="/event/{{this._id}}">See more...</a></p>
+         <p><a href="/event/{{this._id}}">See more...</a></p>
 
+         {{!-- Cancel as a guest --}}
         <form action="/managepage/{{this._id}}/deleteGuest" method="POST">
           <button>Cancel</button>
         </form>
-        
+         {{!-- End of cancelling as a guest --}}
       </div>
       {{/each}}
     </section>
