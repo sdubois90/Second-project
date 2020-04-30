@@ -38,7 +38,7 @@ console.log(isTheChef)
       console.log(dbErr);
     });
 });
-  
+
 
 router.post('/event/:id', (req, res) => {
   console.log(req.session.currentUser._id) // user id

@@ -34,7 +34,7 @@
     <h3>As a Host</h3>
     <section class="events-wrapper" style="flex-wrap: wrap;">
 
-      {{#each hostEvents}}
+      {{#each allEvents}}
       <div class="events-info" style="width:18%; margin:1%">
 
         <div><img class="img_events_all" src="{{this.imgPath}}" alt="events_img"></div>
@@ -50,7 +50,7 @@
         <p>{{this.location.city}}</p>
         
        
-        <p><a href="/event/{{this._id}}">See more...</a></p>
+        <p><a href="">See more...</a></p>
      
 
         <button>Cancel</button> <button>Edit</button>
@@ -62,10 +62,7 @@
     <h3>As a Guest</h3>
     <section class="events-wrapper" style="flex-wrap: wrap;">
 
-
-            
-
-      {{#each guestEvents}}
+      {{#each allEvents}}
       <div class="events-info" style="width:18%; margin:1%">
 
         <img class="img_events_all" src="{{this.imgPath}}" alt="events_img">
@@ -73,7 +70,7 @@
         <h3>{{this.eventName}}</h3>
         <h4 class="events-title">{{this.type}}</h4>
         <h4>Host</h4>
-        <p>{{this.chef.firstName}}</p>
+        <p>{{this._id}}</p>
                 <h4>Date</h4>
         <p>{{this.dateOfEvent}}</p>
         <h4>Location</h4>
@@ -81,8 +78,11 @@
 
         <h4>"Restrictions"</h4>
         <p>{{this.restrictions}}</p>
-         <p><a href="/event/{{this._id}}">See more...</a></p>
-        <button>Cancel</button>
+
+        {{!-- <form action="/managepage/{{this._id}}/deleteGuest" method="POST">
+          <button>Cancel</button>
+        </form> --}}
+
       </div>
       {{/each}}
 

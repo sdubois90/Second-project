@@ -40,7 +40,11 @@ router.get("/managepage", requireAuth, (req, res) => {
     });
 
 
+// router.post('/managepage/:id/deleteGuest', (req, res) => {
+//   console.log(req.params.id)
+//   Event.findByIdAndUpdate(req.params.id, { $pull: { guests: req.session.currentUser._id } }, { new: true, useFindAndModify: false })
   
+// })
 // router.get("/manage-delete/:id", (req, res) => {
  
 //     Event.findByIdAndDelete(req.params.id)
