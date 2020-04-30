@@ -23,9 +23,17 @@ router.get('/my-events', requireAuth, (req, res) => {
 
 
 router.get('/create-event', requireAuth, (req, res) => {
-    res.render('create-event.hbs', {
-        styles: ['create.css']
-    });
+    Tag.find({})
+        .then(dbResult => {
+            console.log(dbResult),
+            res.render('create-event.hbs', {
+                restrictionTags:dbResult,
+                styles: ['create.css']
+            });
+        })
+        .catch(dbErr => {
+            console.log(dbErr);
+        });
 });
 
 router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res) => {
@@ -37,6 +45,7 @@ router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res
                 starter,
                 main,
                 dessert,
+                restrictions,
                 date,
                 street,
                 city,
@@ -45,12 +54,13 @@ router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res
                 theme,
                 information
             } = req.body;
-
+                        console.log(restrictions)
             const newEvent = {
                 chef: req.session.currentUser,
                 eventName:name,
                 type,
-                menu: {starter:starter, main:main, dessert:dessert},
+                menu: { starter: starter, main: main, dessert: dessert },
+                restrictions,
                 dateOfEvent:date,
                 location: {street:street, city:city},
                 maxPeople:peopleNumber,
@@ -58,7 +68,7 @@ router.post('/create-event', requireAuth, uploadCloud.single('image'), (req, res
                 theme,
                 information
             }
-            console.log(req.session.currentUser)
+            console.log(newEvent.restrictions)
 
             // Besoin de vérifier si req.file pour ajouter à newEneaker,
             // c'est pour ça qu'on ne fait pas directement un Event.create(req.body)

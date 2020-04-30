@@ -60,7 +60,9 @@
                     <h4>Theme of the event</h4>
                     <p>{{event.theme}}</p>
                     <h4>"Restrictions"</h4>
-                    <p>{{event.restrictions}}</p>
+                    {{#each event.restrictions}}
+                    <p>{{this.restrictions}}</p>
+                    {{/each}}
 
             </div>
             <div class="buttons-div">

@@ -25,7 +25,13 @@
       <h3>{{this.eventName}}</h3>
       <h4 class="events-title">{{this.type}}</h4>
       <p>Date{{this.date}}</p>
-      <p>Diet{{this.restrictions}}</p>
+
+      <h4>Diet:</h4>
+      <ul>
+      {{#each restrictions}}
+      <li>{{this.restrictions}}</li>
+      {{/each}}
+      </ul>
     
       <p><a href="/event/{{this._id}}">See more</a></p>
     </div>

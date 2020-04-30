@@ -27,9 +27,23 @@
             <input type="text" id="dessert" name="dessert" placeholder="Chocolate Banana cake">
         </div>
         <div>
-            <h3>Time</h3>
+            <h3>If restrictions apply?</h3>
+            <label for="restrictions">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</label>
+            <select name="restrictions" id="restrictions" multiple size='5'>
+                <option value="-1" disabled>Restrictions</option>
+                {{!-- For each tag created : { _id: 5ea9780162a47f34beb837e3, restrictions: 'Vegetarian', __v: 0 }, (exemple of the first one--}}
+                {{!-- Then we select by default the one in user.restrictions._id  because the User tag contains restrictions: [{ type: Schema.Types.ObjectId, ref: "Tag" }]--}}
+                {{#each restrictionTags}}
+                <option value="{{this._id}}">{{this.restrictions}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div>
+            <h3>Date &amp; Time</h3>
             <label for="date">Date of the event</label>
-            <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="2020-01-03" required>
+            <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="2020-05-03" required>
+            {{!-- <label for="time">Time of the event</label>
+            <input type="time" id="time" name="date" min="06:00" max="23:59" value="09:30" required> --}}
         </div>
         <div>
             <h3>Address of the event: street and city</h3>

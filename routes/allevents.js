@@ -5,7 +5,8 @@ const User = require("../models/User");
 
 router.get("/allevents", (req, res) => {
   
-    Event.find({ })
+  Event.find({})
+      .populate("restrictions")
       .then((dbResult) => {
         res.render("all-events", {
           allEvents: dbResult,
@@ -21,6 +22,10 @@ router.get("/event/:id", (req, res) => {
   Event.findById(req.params.id)
     .populate("chef")
     .populate("guests")
+
+// Trying to display the names of the restrictions and not just the IDs
+    .populate("restrictions")
+
     .then((dbResult) => {
       console.log(dbResult)
       let isTheChef = false;
@@ -55,7 +60,7 @@ router.post('/event/:id', (req, res) => {
       Event.findByIdAndUpdate(req.params.id, { $addToSet: { guests: req.session.currentUser._id } }, { new: true, useFindAndModify: false })
         .then(dbResult => {
           console.log(dbResult);
-          res.redirect('/');
+          res.redirect('/managepage');
         })
         .catch(dbErr => {
           console.log(dbErr);

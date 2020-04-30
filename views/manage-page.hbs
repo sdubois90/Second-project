@@ -9,16 +9,11 @@
 </head>
 
 <body>
-
-
   <div class="main-contents-events">
     <div class="title-div">
-
       <h1 class="events-title">Manage Your Events</h1>
     </div>
-
     {{!-- Sébastien's part --}}
-
     {{!-- <h1>Here are your events</h1>
 <div style="display:flex;flex-wrap:wrap">
   {{#each events}}
@@ -33,63 +28,48 @@
 </div> --}}
     <h3>As a Host</h3>
     <section class="events-wrapper" style="flex-wrap: wrap;">
-
-      {{#each allEvents}}
+      {{#each hostEvents}}
       <div class="events-info" style="width:18%; margin:1%">
-
         <div><img class="img_events_all" src="{{this.imgPath}}" alt="events_img"></div>
-
-<div>
-        <h3>{{this.eventName}}</h3>
-        <h4 class="events-title">{{this.type}}</h4>
-        <h4>Date</h4>
-        <p>{{this.dateOfEvent}}</p>
-        
-        
-        <h4>Location</h4>
-        <p>{{this.location.city}}</p>
-        
-       
-        <p><a href="">See more...</a></p>
-     
-
-        <button>Cancel</button> <button>Edit</button>
-</div>
+        <div>
+          <h3>{{this.eventName}}</h3>
+          <h4 class="events-title">{{this.type}}</h4>
+          <h4>Date</h4>
+          <p>{{this.dateOfEvent}}</p>
+          <h4>Location</h4>
+          <p>{{this.location.city}}</p>
+          <p><a href="/event/{{this._id}}">See more...</a></p>
+          <button>Cancel</button> <button>Edit</button>
+        </div>
       </div>
       {{/each}}
-
     </section>
+
     <h3>As a Guest</h3>
     <section class="events-wrapper" style="flex-wrap: wrap;">
-
-      {{#each allEvents}}
+      {{#each guestEvents}}
       <div class="events-info" style="width:18%; margin:1%">
-
         <img class="img_events_all" src="{{this.imgPath}}" alt="events_img">
-
         <h3>{{this.eventName}}</h3>
         <h4 class="events-title">{{this.type}}</h4>
         <h4>Host</h4>
-        <p>{{this._id}}</p>
-                <h4>Date</h4>
+        <p>{{this.chef.firstName}}</p>
+        <h4>Date</h4>
         <p>{{this.dateOfEvent}}</p>
         <h4>Location</h4>
         <p>{{this.location.city}}</p>
-
         <h4>"Restrictions"</h4>
         <p>{{this.restrictions}}</p>
+        <p><a href="/event/{{this._id}}">See more...</a></p>
 
-        {{!-- <form action="/managepage/{{this._id}}/deleteGuest" method="POST">
+        <form action="/managepage/{{this._id}}/deleteGuest" method="POST">
           <button>Cancel</button>
-        </form> --}}
-
+        </form>
+        
       </div>
       {{/each}}
-
     </section>
   </div>
-
-
 </body>
 
 </html>
