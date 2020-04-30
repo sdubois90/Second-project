@@ -1,10 +1,30 @@
 
+#allpage{
+  padding-top: 7vh;
+  background-image: url("../images/oneevent.jpeg");
+  background-size: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .main-contents-one-event {
 
-    border: 1px solid black;
+    /* border: 1px solid black; */
     font-family: Arial;
     display: block;
   }
+
+  /* form {
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 25vw;
+    background-color: RGB(255, 255, 255, 0.8);
+    padding: 2%;
+    border-radius: 5px;
+    height: 50vh;
+  } */
   
   .title-div {
 
@@ -15,14 +35,23 @@
   .one-event-wrapper{
     display: flex;
     flex-wrap: wrap;
-  
-    border: 1px solid black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+    /* border: 1px solid black; */
     padding: 10px;
     margin: 10px;
   }
   
   .one-event-title {
       padding: 20px;
+      font-size: 2em;
+      
+    
+      border-radius: 15px;
+        display: inline-block;
   }
 
   .one-event-info{
@@ -30,7 +59,9 @@
     text-align: center;
     width: 23%;
     margin: auto;
-    border: 1px solid black;
+    border: 2px solid goldenrod;
+     background-color: RGB(255, 255, 255, 0.8);
+      border-radius: 5px;
   }
   
   .img_one_event_main {
@@ -46,7 +77,8 @@
 
 .buttons-div{
   /* border: 1px solid red; */
-  align-items: left;
+  
+  width:30 vw;
 }
 
 h4{
