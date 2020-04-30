@@ -14,41 +14,47 @@ window.addEventListener("load", function () {
         }
     ];
 
-    var speed = 50; /* The speed of the effect in milliseconds */
-    var i = 0;
+    // BASIC WORKING
+    // var speed = 50; /* The speed of the effect in milliseconds */
+    // var i = 0;
     
-    function scrollingText() {
- 
-        let texte = textNodes[0].text
-        if (i < texte.length) {
-            document.getElementById("textBox").innerHTML += texte.charAt(i);
-            i++;
-
-            setTimeout(scrollingText, speed);
-
-        }
-    }
-    scrollingText();
-
-
-    // let texte = textNodes[index].text
-
-
     // function scrollingText() {
-
-    //     while (i < texte.length) {
+ 
+    //     let texte = textNodes[0].text
+    //     if (i < texte.length) {
     //         document.getElementById("textBox").innerHTML += texte.charAt(i);
     //         i++;
-    //         setTimeout(scrollingText, speed);
 
-    //         // Trying to go the next node
-    //         if (!texte.charAt(i)) {
-    //             texte = textNodes[index].text
-    //         }
+    //         setTimeout(scrollingText, speed);
 
     //     }
     // }
     // scrollingText();
+
+///////// MORE ADVANCE /////////
+    
+
+    // maybe put everything inside a setInterval for infinite looping?
+    let texte;
+    var speed = 50;
+    
+    function scrollingText() {
+
+        for (let index = 0; index < textNodes[index].text; index++) {
+            texte = textNodes[index].text
+            let i = 0
+                while (i < texte.length) {
+                    document.getElementById("textBox").innerHTML += texte.charAt(i);
+                    i++;
+                    setTimeout(scrollingText, speed);
+                }
+                document.getElementById("textBox").innerHTML = "";
+        }
+        setInterval(() => {
+            
+        }, 500);
+    }
+    scrollingText();
 
 
 
