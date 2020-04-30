@@ -62,6 +62,18 @@ router.get("/manage-delete/:id", requireAuth, (req, res) => {
       });
   });
 
+
+router.get('/myevent/edit/:id', (req, res) => {
+  Event.findById(req.params.id)
+    .then(dbResult => {
+      res.render('edit_event.hbs', {
+        event: dbResult
+      })
+    })
+    .catch(dbError => {
+      console.log(dbError);
+    });
+});
   
   router.post("/myevent/edit/:id", requireAuth, upload.single("imgPath"),(req, res) => {
     let modifiedEvent = {
@@ -81,7 +93,7 @@ router.get("/manage-delete/:id", requireAuth, (req, res) => {
       pricePP: req.body.price,
       theme: req.body.theme,
       information: req.body.information,
-      restrictions: req.body.restrictions
+      // restrictions: req.body.restrictions
     };
     if (req.file) {
       console.log(req.file)

@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    {{#each styles}}
-    <link rel="stylesheet" href="/stylesheets/{{this}}">
-    {{/each}}
-    <script src="./javascript/index.js"></script>
-  </head>
-  <body>
-    <header>
 
-      <nav class="flex">
-        <div id="blank1"></div>
-        <div>
-          <ul class="ul flex">
-            <li>
-              <a href="/"><span>Our logo</span></a>
-            </li>
-            <li>
-              <a href="/allevents"><span>Events</span></a>
-            </li>
-            {{#if isLoggedIn}}
-            <li>
-              <a href="/create-event"><span>Create event</span></a>
-            </li>
-            <li>
-              <a href="/managepage"><span>My events</span></a>
-            </li>
-            <li>
-              <a href="/myprofile"><span>My profile</span></a>
-            </li>
-            <li>
-              <a href="/logout"><span>Log out</span></a>
-            </li>
-            <div id="blank"></div>
-            {{else}}
-            <li>
-              <a href="/signup"><span>Sign up</span></a>
-            </li>
-            <li>
-              <a href="/login"><span>Log in</span></a>
-            </li>
-            {{/if}}
-          </ul>
-        </div>
-      </nav>
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  {{#each styles}}
+  <link rel="stylesheet" href="/stylesheets/{{this}}">
+  {{/each}}
+  {{#each scripts}}
+  <script type="module" src="/javascript/{{this}}"></script>
+  {{/each}}
+  <script src="./javascript/index.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
 
-    </header>
-    {{{body}}}
-  </body>
+<body>
+  <header>
+
+    <nav class="flex">
+      <div id="blank1"></div>
+      <div>
+        <ul class="ul flex">
+          <li>
+            <a href="/"><span>Our logo</span></a>
+          </li>
+          <li>
+            <a href="/allevents"><span>Events</span></a>
+          </li>
+          {{#if isLoggedIn}}
+          <li>
+            <a href="/create-event"><span>Create event</span></a>
+          </li>
+          <li>
+            <a href="/managepage"><span>My events</span></a>
+          </li>
+          <li>
+            <a href="/myprofile"><span>My profile</span></a>
+          </li>
+          <li>
+            <a href="/logout"><span>Log out</span></a>
+          </li>
+          <div id="blank"></div>
+          {{else}}
+          <li>
+            <a href="/signup"><span>Sign up</span></a>
+          </li>
+          <li>
+            <a href="/login"><span>Log in</span></a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+  {{{body}}}
+</body>
+
 </html>

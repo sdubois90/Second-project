@@ -1,21 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='/stylesheets/allevents.css' />
-  <title>Document</title>
-</head>
-<body>
-
-
 <div class="main-contents-events">
   <div class="title-div">
 
     <h1 class="events-title">All Events</h1>
   </div>
 
-  <section class="events-wrapper">
+  {{!-- Filters --}}
+  <aside>
+    <h4>All Tags</h4>
+
+    <form id="filter-form">
+      <ul data-category="{{restrictions}}">
+        {{#each tags}}
+        <li>
+          <label for="input_{{this._id}}">{{this.restrictions}}</label>
+          <input name="restrictions" value="{{this._id}}" id="input_{{this._id}}" type="checkbox"
+            data-tag-id="{{this._id}}">
+        </li>
+        {{/each}}
+
+
+        {{!-- {{#each type}}
+      <li>
+        <label for="input_{{this}}">{{this}}</label>
+        <input name="type" value="{{this}}" id="input_{{this}}" type="checkbox" data-tag-id="{{this}}">
+      </li>
+      {{/each}} --}}
+      </ul>
+    </form>
+
+  </aside>
+
+
+
+  <section id="events-wrapper-two" class="events-wrapper">
 
     {{#each allEvents}}
     <div class="events-info">
@@ -24,22 +41,20 @@
 
       <h3>{{this.eventName}}</h3>
       <h4 class="events-title">{{this.type}}</h4>
-      <p>Date{{this.date}}</p>
+      <h4>Date:</h4>
+      {{!-- <p>{{this.dateOfEvent}}</p> --}}
+      <p>May 03 2020 09:30</p>
 
       <h4>Diet:</h4>
       <ul>
-      {{#each restrictions}}
-      <li>{{this.restrictions}}</li>
-      {{/each}}
+        {{#each restrictions}}
+        <li>{{this.restrictions}}</li>
+        {{/each}}
       </ul>
-    
+
       <p><a href="/event/{{this._id}}">See more</a></p>
     </div>
     {{/each}}
 
   </section>
 </div>
-
-  
-</body>
-</html>

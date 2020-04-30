@@ -19,8 +19,6 @@
         <section class="one-event-wrapper">
             <div class="img-div">
                 <img class="img" src="{{event.imgPath}}" alt="one_event_main_img">
-                <img class="img" src="{{event.imgPath}}" alt="one_event_host_img">
-                <img class="img" src="{{event.imgPath}}" alt="one_event_food_img">
             </div>
 
             <div class="one-event-info">
@@ -34,7 +32,7 @@
                 <h2>{{event.eventName}}</h3>
                     <h3>{{event.type}}</h3>
                     <h4>Date</h4>
-                    <p>{{this.dateOfEvent}}</p>
+                    <p>{{event.dateOfEvent}}</p>
                     <h4>Menu</h4>
                     <h5>Starter</h5>
                     <p>{{event.menu.starter}}</p>

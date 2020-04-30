@@ -11,6 +11,11 @@ section {
     justify-content: center;
 }
 
+/* #form {
+  display:flex;
+  flex-direction: row;
+} */
+
     @media only screen and (max-width:1400px) and (min-width:1301px){
     .section {
     padding-top:9vmin;
