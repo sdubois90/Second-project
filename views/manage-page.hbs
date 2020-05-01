@@ -10,9 +10,9 @@
 
 <body>
   <div class="main-contents-events">
-    <div class="title-div">
+    {{!-- <div class="title-div"> --}}
       <h1 class="events-title">Manage Your Events</h1>
-    </div>
+    {{!-- </div> --}}
     {{!-- Sébastien's part --}}
     {{!-- <h1>Here are your events</h1>
 <div style="display:flex;flex-wrap:wrap">
@@ -27,53 +27,55 @@
   {{/each}}
 </div> --}}
     <h3>As a Host</h3>
-    <section class="events-wrapper" style="flex-wrap: wrap;">
+    <section class="events-wrapper">
       {{#each hostEvents}}
-      <div class="events-info" style="width:18%; margin:1%">
+      <div class="events-info">
         <div><img class="img_events_all" src="{{this.imgPath}}" alt="events_img"></div>
 
 <div>
         <h3>{{this.eventName}}</h3>
         <h4 class="events-title">{{this.type}}</h4>
         <h4>Date</h4>
-        <p>{{this.dateOfEvent}}</p>
+        {{!-- <p>{{this.dateOfEvent}}</p> --}}<p>May 03 2020 09:30</p>
         
         
         <h4>Location</h4>
         <p>{{this.location.city}}</p>
-        
-       
-        <p><a href="/event/{{this._id}}">See more...</a></p>
-     
-
-        <button><a href="/manage-delete/{{this._id}}">Cancel</a> </button> <p><a href="/myevent/edit/{{this._id}}">Edit</a></p>
+      <div class="button-flex">
+        <button class="button marg"><a class="link" href="/myevent/edit/{{this._id}}">Edit</a></button>
+        <button class="button marg"><a class="link" href="/event/{{this._id}}">Details</a></button>
+        <button class="button"><a class="link" href="/manage-delete/{{this._id}}">Cancel</a></button>
+      </div>
 </div>
       </div>
       {{/each}}
     </section>
 
     <h3>As a Guest</h3>
-    <section class="events-wrapper" style="flex-wrap: wrap;">
+    <section class="events-wrapper">
       {{#each guestEvents}}
-      <div class="events-info" style="width:18%; margin:1%">
+      <div class="events-info">
         <img class="img_events_all" src="{{this.imgPath}}" alt="events_img">
         <h3>{{this.eventName}}</h3>
         <h4 class="events-title">{{this.type}}</h4>
         <h4>Host</h4>
         <p>{{this.chef.firstName}}</p>
         <h4>Date</h4>
-        <p>{{this.dateOfEvent}}</p>
+        {{!-- <p>{{this.dateOfEvent}}</p> --}}<p>May 03 2020 09:30</p>
         <h4>Location</h4>
         <p>{{this.location.city}}</p>
-        <h4>"Restrictions"</h4>
+        <h4>Restrictions</h4>
         <p>{{this.restrictions}}</p>
-         <p><a href="/event/{{this._id}}">See more...</a></p>
 
-         {{!-- Cancel as a guest --}}
-        <form action="/managepage/{{this._id}}/deleteGuest" method="POST">
-          <button>Cancel</button>
-        </form>
-         {{!-- End of cancelling as a guest --}}
+        <div class="button-flex">
+          <button class="button2 marg"><a class="link" href="/event/{{this._id}}">Details</a></button>
+
+          {{!-- Cancel as a guest --}}
+          <form class="form button2" action="/managepage/{{this._id}}/deleteGuest" method="POST">
+            <button class="button-form"><a class="link" id="hand">Cancel</a></button>
+          </form>
+          {{!-- End of cancelling as a guest --}}
+         </div>
       </div>
       {{/each}}
     </section>

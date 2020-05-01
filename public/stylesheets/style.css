@@ -4,14 +4,13 @@
   box-sizing: border-box;
 }
 
-body {
+#body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* padding-top:5px;
   padding-bottom:5px; */
   background-color: #f5cac3;
   position: relative
 }
-
 
 a {
   color: #00B7FF;
@@ -36,12 +35,12 @@ nav {
   list-style-type: none;
 }
 
-li {
+.li {
   padding: 0 10px;
   width: 20vmin;
 }
 
-.ul li a {
+.ul .li a {
   min-width: 5vmin;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -59,13 +58,13 @@ li {
 }
 
 /* Animation */
-/* .ul li a:hover {
+/* .ul .li a:hover {
   background-color: #f77f00;
   -webkit-transform: rotate(360deg);
   transform: rotate(-15deg);
 }
 
-.ul li a {
+.ul .li a {
   -webkit-transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
 } */
@@ -87,22 +86,22 @@ li {
   padding-bottom:5px */
   }
 
-  li {
+  .li {
     padding: 0 10px;
     width: 25vmin;
   }
 
-  .ul li a {
+  .ul .li a {
     min-width: 5vmin;
     width: 100%;
     text-align: center;
     border-radius: 50px;
-    background-color: #f9ba54;
+    /* background-color: #f9ba54; */
     padding: 1vh 0;
     display: block;
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-decoration: none;
-    color: white;
+    color: darkgreen;
     font-weight: bolder;
   }
 }
@@ -114,23 +113,23 @@ li {
   padding-bottom:5px */
   }
 
-  li {
+  .li {
     padding: 0 10px;
     width: 25vmin;
   }
 
-  .ul li a {
+  .ul .li a {
     min-width: 10vmin;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
     border-radius: 50px;
-    background-color: #f9ba54;
+    /* background-color: #f9ba54; */
     padding: 1vh 1.5vw;
     display: block;
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-decoration: none;
-    color: white;
+    color: darkgreen;
     font-weight: bolder;
   }
 
@@ -146,22 +145,22 @@ li {
   padding-bottom:5px */
   }
 
-  li {
+  .li {
     padding: 0 7px;
     width: 20vmin;
   }
 
-  .ul li a {
+  .ul .li a {
     min-width: 4vmin;
     width: 100%;
     text-align: center;
     border-radius: 50px;
-    background-color: #f9ba54;
+    /* background-color: #f9ba54; */
     padding: 1vh 0;
     display: block;
-    font-size: 1.1em;
+    font-size: 1.5em;
     text-decoration: none;
-    color: white;
+    color: darkgreen;
     font-weight: bolder;
   }
 

@@ -14,38 +14,38 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
+<body id="body">
   <header>
 
     <nav class="flex">
       <div id="blank1"></div>
       <div>
         <ul class="ul flex">
-          <li>
+          <li class="li">
             <a href="/"><img src="images/logo.png" alt=""></a>
           </li>
-          <li>
+          <li class="li">
             <a href="/allevents"><span>Events</span></a>
           </li>
           {{#if isLoggedIn}}
-          <li>
+          <li class="li">
             <a href="/create-event"><span>Create event</span></a>
           </li>
-          <li>
+          <li class="li">
             <a href="/managepage"><span>My events</span></a>
           </li>
-          <li>
+          <li class="li">
             <a href="/myprofile"><span>My profile</span></a>
           </li>
-          <li>
+          <li class="li">
             <a href="/logout"><span>Log out</span></a>
           </li>
           <div id="blank"></div>
           {{else}}
-          <li>
+          <li class="li">
             <a href="/signup"><span>Sign up</span></a>
           </li>
-          <li>
+          <li class="li">
             <a href="/login"><span>Log in</span></a>
           </li>
           {{/if}}

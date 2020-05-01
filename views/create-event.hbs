@@ -1,11 +1,10 @@
-
-<section>
+<main>
 <h1>Creating my Event:</h1>
     <form id="form" action="/create-event" method="POST" enctype="multipart/form-data">
         <article>
         <div>
-            <label for="name">Name of my event</label>
-            <input type="text" id="name" name="name" placeholder="Forest Cake in my Garden" value="Forest Cake in my Garden" required>
+        <h3>Name of my event:</h3>
+            <input type="text" name="name" placeholder="Forest Cake in my Garden" value="Forest Cake in my Garden" required>
         </div>
         <div>
             <label for="type">Meal type</label>
@@ -29,7 +28,7 @@
         <div>
             <h3>If restrictions apply?</h3>
             <label for="restrictions">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options:</label>
-            <select name="restrictions" id="restrictions" multiple size='7'>
+            <select name="restrictions" id="restrictions" multiple>
                 <option value="-1" disabled>Restrictions</option>
                 {{!-- For each tag created : { _id: 5ea9780162a47f34beb837e3, restrictions: 'Vegetarian', __v: 0 }, (exemple of the first one--}}
                 {{!-- Then we select by default the one in user.restrictions._id  because the User tag contains restrictions: [{ type: Schema.Types.ObjectId, ref: "Tag" }]--}}
@@ -61,6 +60,8 @@
             <label for="price">Cost per guest in € (0 would be free)</label>
             <input type="number" id="price" name="price" min="0" max="300" placeholder="10" value="10" required>
         </div>
+    </article>
+    <article>
         <div>
             <h3>BONUS (optional)</h3>
             <label for="theme">Add a feast's theme?</label>
@@ -75,5 +76,4 @@
         <button>Yummy (｡◕‿◕｡)</button>
     </article>
     </form>
-    
-</section>
+</main>
