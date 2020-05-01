@@ -1,60 +1,77 @@
 <section>
-
     <form id="form" action="/myevent/edit/{{event._id}}" method="POST" enctype="multipart/form-data">
-        <h1>Editing my Event:</h1>
         <div>
-            <label for="name">Name of my event</label>
-            <input type="text" id="name" name="eventName" value="{{event.eventName}}" required>
+            <img id="imgevent"src="{{event.imgPath}}" alt="">
         </div>
-        <div>
-            <label for="type">Meal type</label>
-            <select name="type" id="type" required>
-                <option value="-1" disabled selected>Choose one meal</option>
-                <option value="breakfast" selected>Breakfast</option>
-                <option value="brunch">Brunch</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-            </select>
-        </div>
-        <div>
-            <h3>Menu: if only 1 course, then use the 'Main' input</h3>
-            <label for="starter">Starter</label>
-            <input type="text" id="starter" name="starter" value="{{event.menu.starter}}">
-            <label for="main">Main</label>
-            <input type="text" id="main" name="main" value="{{event.menu.main}}" required>
-            <label for="dessert">Dessert</label>
-            <input type="text" id="dessert"name="dessert" value="{{event.menu.dessert}}">
-        </div>
-        <div>
-            <h3>Time</h3>
-            <label for="date">Date of the event</label>
-            <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="{{event.date}} "required>
-        </div>
-        <div>
-            <h3>Address of the event: street and city</h3>
-            <input type="text" id="street" name="street" value="{{event.location.street}}" required>
-            <input type="text" id="city" name="city" value="{{event.location.city}}" required>
-        </div>
-        <div>
-            <h3>Guests</h3>
-            <label for="peopleNumber">Number of guests</label>
-            <input type="number" id="peopleNumber" name="peopleNumber"value="{{event.maxPeople}}" min="1" max="20" required>
-        </div>
-        <div>
-            <label for="price">Cost per guest in € (0 would be free)</label>
-            <input type="number" id="price" name="price" min="0" max="300" value="{{event.pricePP}}" required>
-        </div>
-        <div>
-            <h3>BONUS (optional)</h3>
-            <label for="theme">Add a feast's theme?</label>
-            <input type="text" id="theme" name="theme" value="{{event.theme}}">
-            <label class="label" for="image">Change the picture?</label>
-            <input type="file" id="image" name="imgPath">
-            <label class="label" for="information">Complementary information:</label>
-            <textarea name="information" id="information"value="{{event.information}}" rows="10"></textarea>
-        </div>
+        <div id="form_part">
+            <h1>Editing my Event:</h1>
+            <div>
+                <label for="name">Name of my event</label>
+                <input type="text" id="name" name="eventName" value="{{event.eventName}}" required>
+            </div>
+            <div>
+                <label for="type">Meal type</label>
+                <select name="type" id="type" required>
+                    <option value="-1" disabled selected>Choose one meal</option>
+                    <option value="breakfast" selected>Breakfast</option>
+                    <option value="brunch">Brunch</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                </select>
+            </div>
+            <div>
+                <h3>Menu: if only 1 course, then use the 'Main' input</h3>
+                <label for="starter">Starter</label>
+                <input type="text" id="starter" name="starter" value="{{event.menu.starter}}">
+                <label for="main">Main</label>
+                <input type="text" id="main" name="main" value="{{event.menu.main}}" required>
+                <label for="dessert">Dessert</label>
+                <input type="text" id="dessert" name="dessert" value="{{event.menu.dessert}}">
+            </div>
+            <div>
+                <h3>Time</h3>
+                <label for="date">Date of the event</label>
+                <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="{{event.date}} "
+                    required>
+            </div>
+            <div>
+                <h3>Address of the event: street and city</h3>
+                <input type="text" id="street" name="street" value="{{event.location.street}}" required>
+                <input type="text" id="city" name="city" value="{{event.location.city}}" required>
+            </div>
+            <div>
+                <h3>Guests</h3>
+                <label for="peopleNumber">Number of guests</label>
+                <input type="number" id="peopleNumber" name="peopleNumber" value="{{event.maxPeople}}" min="1" max="20"
+                    required>
+            </div>
+            <div>
+                <label for="price">Cost per guest in € (0 would be free)</label>
+                <input type="number" id="price" name="price" min="0" max="300" value="{{event.pricePP}}" required>
+            </div>
 
-        <button>Update my event</button>
+            <div>
+                <label for="restrictions">Food restrictions</label>
+                <select multiple name="restrictions">
+                    <option value="-1" disabled selected>None</option>
+                    {{#each tags}}
+                    <option {{isSelected ../event.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div>
+                <h3>BONUS (optional)</h3>
+                <label for="theme">Add a feast's theme?</label>
+                <input type="text" id="theme" name="theme" value="{{event.theme}}">
+                <label class="label" for="image">Change the picture?</label>
+                <input type="file" id="image" name="imgPath">
+                <label class="label" for="information">Complementary information:</label>
+                <textarea name="information" id="information" rows="10">{{event.information}}</textarea>
+            </div>
+
+            <button>Update my event</button>
     </form>
-
+    </div>
 </section>

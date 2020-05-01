@@ -31,6 +31,7 @@ form {
     padding: 2%;
     border-radius: 5px;
     height: 80vh;
+    margin-top: 5vh;
 }
 
 #form_part {
@@ -85,10 +86,25 @@ label {
 }
 
 .about_me {
+
     height: 7vh;
+    width: 80%;
+    height: 10vh;
+    border: none;
+    border-radius: 3px;
+    /* background-color: RGB(255, 99, 71); */
+    outline: 0;
+    padding-left: 1vw;
+    padding-top: 0.5vh;
 }
 
 img {
-    height: 70vh;
+    max-height: 70vh;
     margin-right: 2vw;
+    max-width: 25vw;
+}
+
+select{
+    width: 80%;
+    border: none;
 }
