@@ -17,6 +17,7 @@ router.get("/managepage", requireAuth, (req, res) => {
       }]
     })
     .populate("chef")
+    .populate("restrictions")
     .then((dbResult) => {
       let allEvents = dbResult
       let guestEvents = [];

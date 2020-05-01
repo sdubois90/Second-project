@@ -64,10 +64,10 @@
         {{!-- <p>{{this.dateOfEvent}}</p> --}}<p>May 03 2020 09:30</p>
         <h4>Location</h4>
         <p>{{this.location.city}}</p>
-        {{!-- {{#unless guestEvents.restrictions}} --}}
-        <h4>Restrictions</h4>
-        <p>{{this.restrictions}}</p>
-        {{!-- {{/unless}} --}}
+        {{!-- {{#if this.restrictions}} --}}
+        {{!-- <h4>Restrictions</h4> --}}
+        {{!-- <p>{{this.restrictions.restrictions}}</p> --}}
+        {{!-- {{/if}} --}}
         <div class="button-flex">
           <button class="button2 marg"><a class="link" href="/event/{{this._id}}">Details</a></button>
 
