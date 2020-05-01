@@ -49,7 +49,9 @@ router.get("/manage-delete/:id", requireAuth, (req, res) => {
     .then((dbResult) => {
       res.redirect("/managepage");
     })
-    .catch(dbErr)
+    .catch(dbErr => {
+      console.log(dbErr);
+    });
 });
 
 // Cancelling as a guest
