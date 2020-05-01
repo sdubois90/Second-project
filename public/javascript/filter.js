@@ -25,7 +25,7 @@ function eventCard(element) {
     let card = `
     <div class="events-info">
         <img class="img_events_all" src="${element.imgPath}" alt="${element.eventName}">
-   
+   <div class="info-box">
     <h3>${element.eventName}</h3>
     <h4 class="events-title">${element.type}</h4>
     <h4>Date:</h4>
@@ -34,9 +34,9 @@ function eventCard(element) {
     
     let list = "<ul>";
     element.restrictions.forEach((element) => {
-        list += `<li class="item">${element.restrictions}</li>`;
+        list += `<li class="item events-info-list">${element.restrictions}</li>`;
     });
-    card += list + `</ul><p><a href="/event/${element._id}">See more</a></p></div>`;
+    card += list + `</ul><p><a href="/event/${element._id}">See more</a></p></div></div>`;
     return card;
 }
 

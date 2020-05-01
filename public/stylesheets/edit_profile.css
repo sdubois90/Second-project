@@ -108,3 +108,9 @@ select{
     width: 80%;
     border: none;
 }
+
+#picture-middle {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

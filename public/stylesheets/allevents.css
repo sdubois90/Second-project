@@ -81,18 +81,20 @@ body{
   }
 
   p {
-    height: 45px;
+    height: 37px;
   }
 
   .info-box {
     width: 15vw;
     float: right;
-
   }
 
   .tag-ul {
+    background-color: RGB(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding:10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     list-style-type: none;
     list-style-position: inside;
     width:60% !important;
@@ -100,7 +102,14 @@ body{
   }
 
   .info-li {
-padding: 0;
-margin: 0 !important;
+    padding: 0;
+    margin: 0;
+  }
 
+  .padding-ul {
+    padding-bottom:5px;
+  }
+
+  .middle-button {
+    line-height: 37px;
   }

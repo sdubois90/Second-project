@@ -46,15 +46,15 @@
       {{!-- <p>{{this.dateOfEvent}}</p> --}}
       <p>May 03 2020 09:30</p>
 
-      <h4>Diet:</h4>
-      <ul>
+      {{!-- <h4>Diet:</h4> --}}
+      <ul class="padding-ul">
         {{#each restrictions}}
         <li class="events-info-list">{{this.restrictions}}</li>
         {{/each}}
       </ul>
 
-      <p><a href="/event/{{this._id}}">See more</a></p>
-      </div>
+      <p><a class="middle-button" href="/event/{{this._id}}">See more</a></p>
+</div>
     </div>
     {{/each}}
 

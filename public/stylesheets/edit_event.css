@@ -74,7 +74,6 @@ h3 {
   width: 50%;
 }
 
-
 #form input {
   height:3.2vh;
 }
@@ -120,10 +119,6 @@ h3 {
   font-weight: bolder;
   border-color: #02c39a;
   transition: .3s ease background;
-}
-
-#form button:hover:before {
-  content:'create ';
 }
 
 .error-message {

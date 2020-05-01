@@ -1,12 +1,14 @@
-<section>
+<main>
+    <h1>Editing my Event:</h1>
     <form id="form" action="/myevent/edit/{{event._id}}" method="POST" enctype="multipart/form-data">
-        <div>
+<article>
+        {{!-- <div>
             <img id="imgevent"src="{{event.imgPath}}" alt="">
-        </div>
+        </div> --}}
         <div id="form_part">
-            <h1>Editing my Event:</h1>
             <div>
-                <label for="name">Name of my event</label>
+                <h3>Name of my event:</h3>
+                {{!-- <label for="name">Name of my event</label> --}}
                 <input type="text" id="name" name="eventName" value="{{event.eventName}}" required>
             </div>
             <div>
@@ -29,8 +31,21 @@
                 <input type="text" id="dessert" name="dessert" value="{{event.menu.dessert}}">
             </div>
             <div>
-                <h3>Time</h3>
-                <label for="date">Date of the event</label>
+                <h3>Food restrictions</h3>
+                {{!-- <label for="restrictions">Food restrictions</label> --}}
+                <select multiple name="restrictions">
+                    <option value="-1" selected>None</option>
+                    {{#each tags}}
+                    <option {{isSelected ../event.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}
+                    </option>
+                    {{/each}}
+                </select>
+            </div>
+</article>
+<article>
+            <div>
+                <h3>Date of the event</h3>
+                {{!-- <label for="date">Date of the event</label> --}}
                 <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="{{event.date}} "
                     required>
             </div>
@@ -45,22 +60,13 @@
                 <input type="number" id="peopleNumber" name="peopleNumber" value="{{event.maxPeople}}" min="1" max="20"
                     required>
             </div>
+          
             <div>
                 <label for="price">Cost per guest in € (0 would be free)</label>
                 <input type="number" id="price" name="price" min="0" max="300" value="{{event.pricePP}}" required>
             </div>
-
-            <div>
-                <label for="restrictions">Food restrictions</label>
-                <select multiple name="restrictions">
-                    <option value="-1" disabled selected>None</option>
-                    {{#each tags}}
-                    <option {{isSelected ../event.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}
-                    </option>
-                    {{/each}}
-                </select>
-            </div>
-
+</article>
+<article>
             <div>
                 <h3>BONUS (optional)</h3>
                 <label for="theme">Add a feast's theme?</label>
@@ -72,6 +78,7 @@
             </div>
 
             <button>Update my event</button>
+ </article>
     </form>
     </div>
-</section>
+</main>

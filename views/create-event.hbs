@@ -26,10 +26,10 @@
             <input type="text" id="dessert" name="dessert" placeholder="Chocolate Banana cake">
         </div>
         <div>
-            <h3>If restrictions apply?</h3>
+            <h3>Food restrictions</h3>
             <label for="restrictions">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options:</label>
             <select name="restrictions" id="restrictions" multiple>
-                <option value="-1" disabled>Restrictions</option>
+                <option value="-1" selected>None</option>
                 {{!-- For each tag created : { _id: 5ea9780162a47f34beb837e3, restrictions: 'Vegetarian', __v: 0 }, (exemple of the first one--}}
                 {{!-- Then we select by default the one in user.restrictions._id  because the User tag contains restrictions: [{ type: Schema.Types.ObjectId, ref: "Tag" }]--}}
                 {{#each restrictionTags}}
