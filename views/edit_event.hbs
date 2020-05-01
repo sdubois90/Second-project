@@ -1,3 +1,4 @@
+<body class="create-event-body">
 <main>
     <h1>Editing my Event:</h1>
     <form id="form" action="/myevent/edit/{{event._id}}" method="POST" enctype="multipart/form-data">
@@ -34,7 +35,7 @@
                 <h3>Food restrictions</h3>
                 {{!-- <label for="restrictions">Food restrictions</label> --}}
                 <select multiple name="restrictions">
-                    <option value="-1" selected>None</option>
+                    <option value="-1" disabled selected>None</option>
                     {{#each tags}}
                     <option {{isSelected ../event.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}
                     </option>
@@ -82,3 +83,4 @@
     </form>
     </div>
 </main>
+</body>

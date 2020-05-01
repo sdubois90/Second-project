@@ -1,7 +1,8 @@
 
 
 body{
-  background-image: url("../images/salads.jpg");
+  /* background-image: url("../images/salads.jpg"); */
+  background-image: url("../images/allevents-picture.jpeg");
   background-size: cover;
 }
 .main-contents-events {

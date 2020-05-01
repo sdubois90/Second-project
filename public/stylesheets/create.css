@@ -5,6 +5,13 @@
     /* border:1px solid black; */
 }
 
+.create-event-body {
+  background-image: url('../images/peppers.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 main {
   padding-top: 10vmin;
 }
@@ -57,13 +64,14 @@ h3 {
 
 
 #form {
-  width:95vw;
+  width:85vw;
   display: flex;
   justify-content: center;
   text-align: center;
-  border: 2px solid goldenrod;
+  /* border: 2px solid goldenrod; */
   margin: 15px auto;
   padding: 15px 0;
+  /* background-color: rgba(255, 255, 255, 0.3); */
 }
 
 #form label {

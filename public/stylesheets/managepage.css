@@ -1,4 +1,10 @@
-
+.hello {
+  /* background-image: url('../images/grey-background.jpeg'); */
+  background-image: url('../images/back.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   .main-contents-events {
     font-family: Arial;
     display: block;
@@ -30,10 +36,10 @@
     margin:1%;
     /* margin: 20px;
     width: 25%; */
-    margin: auto;
+    /* margin: auto; */
     background-color: RGB(255, 255, 255, 0.75);
     border-radius: 10px;
-    border: 1.5px solid goldenrod;
+    border: 1px solid goldenrod;
   }
   
   .img_events_all {

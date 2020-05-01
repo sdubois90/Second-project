@@ -1,3 +1,5 @@
+<body class="create-event-body">
+
 <main>
 <h1>Creating my Event:</h1>
     <form id="form" action="/create-event" method="POST" enctype="multipart/form-data">
@@ -29,7 +31,7 @@
             <h3>Food restrictions</h3>
             <label for="restrictions">Hold down the Ctrl (windows) or Command (Mac) button to select multiple options:</label>
             <select name="restrictions" id="restrictions" multiple>
-                <option value="-1" selected>None</option>
+                <option value="-1" disabled selected>None</option>
                 {{!-- For each tag created : { _id: 5ea9780162a47f34beb837e3, restrictions: 'Vegetarian', __v: 0 }, (exemple of the first one--}}
                 {{!-- Then we select by default the one in user.restrictions._id  because the User tag contains restrictions: [{ type: Schema.Types.ObjectId, ref: "Tag" }]--}}
                 {{#each restrictionTags}}
@@ -77,3 +79,4 @@
     </article>
     </form>
 </main>
+    </body>
