@@ -6,7 +6,7 @@ var createError = require('http-errors');
 const User = require('../models/User');
 const Event = require('../models/Event');
 const Tag = require('../models/Tag');
-const requireAuth = require("../middlewares/requireAuth");
+const requireAuth = require("../Middlewares/requireAuth");
 
 router.get('/my-events', requireAuth, (req, res) => {
     Event.find({})

@@ -3,7 +3,7 @@ var router = express.Router();
 const Event = require("../models/Event");
 const User = require("../models/User");
 const Tag = require("../models/Tag");
-const requireAuth = require("../middlewares/requireAuth");
+const requireAuth = require("../Middlewares/requireAuth");
 const upload = require("../config/cloudinary");
 
 router.get("/managepage", requireAuth, (req, res) => {

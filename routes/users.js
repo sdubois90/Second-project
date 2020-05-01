@@ -3,7 +3,7 @@ var router = express.Router();
 const User = require('../models/User')
 const Tag = require('../models/Tag')
 const upload = require("../config/cloudinary");
-const requireAuth = require("../middlewares/requireAuth");
+const requireAuth = require("../Middlewares/requireAuth");
 
 // router.get('/myprofile', (req, res) => {
 //   console.log(req.session.currentUser)
