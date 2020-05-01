@@ -1,6 +1,6 @@
 .hello {
   /* background-image: url('../images/grey-background.jpeg'); */
-  background-image: url('../images/back.jpeg');
+  background-image: url('../images/Background.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,9 +37,9 @@
     /* margin: 20px;
     width: 25%; */
     /* margin: auto; */
-    background-color: RGB(255, 255, 255, 0.75);
+    background-color: RGB(255, 255, 255, 0.9);
     border-radius: 10px;
-    border: 1px solid goldenrod;
+    /* border: 1px solid goldenrod; */
   }
   
   .img_events_all {
@@ -101,10 +101,16 @@
   }
 
   h1 {
+    color:white;
     text-align: center;
     padding-top: 15vmin !important;
   }
 
   h3 {
+    text-align: center;
+  }
+
+  h2 {
+    color:white;
     text-align: center;
   }
