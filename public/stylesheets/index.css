@@ -8,16 +8,28 @@ section {
 
 #textBox {
     font-size: 10vh;
-    color: rgb(245, 245, 227);
+    color:darkgreen;
     text-align: center;
     margin-top: 8vh;
+    
  
    
 }
 h2 {
     text-align: center;
-    color: rgb(255, 255, 235);
+    color: grey;
     margin: 1vh;
     font-size: 2.4vh;
   
+}
+
+#home-title{
+     background-color: RGB(255, 255, 255, 0.7);
+     margin: 0 25vw 0 25vw;
+     border-radius: 100px
+     /* text-align: center;
+     width: 50vw;
+     display: flex;
+     flex-direction: column;
+     justify-content: center; */
 }
