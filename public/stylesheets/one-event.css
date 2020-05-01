@@ -2,14 +2,14 @@
 #allpage{
   padding-top: 7vh;
   background-image: url("../images/oneevent.jpeg");
-  background-size: inherit;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  height: 100vh;
 }
 
 .main-contents-one-event {
 
-    /* border: 1px solid black; */
     font-family: Arial;
     display: block;
   }
@@ -64,31 +64,35 @@
       border-radius: 5px;
   }
   
-  .img_one_event_main {
-    height: 200px;
-  }
 
-  .img-div{
-    display: flex;
-    flex-direction: column;
-    
-    /* border: 1px solid red; */
-  }
+.buttons-div {
+  margin: 3vh;
+  width: 30 vw;
+  align-items: center;
+  text-align: center;
 
-.buttons-div{
-  /* border: 1px solid red; */
-  
-  width:30 vw;
 }
 
 h4{
-  height: 30px;
+  height: 0 0 30px;
 }
 
 p {
-  padding: 0 0 15px;
+  padding: 10px;
 }
 
-img {
-  height: 200px;
+button {
+  padding: 5px;
+  margin: 5px;
+  background-color: RGB(255, 255, 255, 0.6);
+  border-radius: 5px;
+}
+
+article {
+  margin-top: 7px;
+  background-color: rgb(126, 73, 35, 0.4);
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid  rgb(126, 73, 35, 0.5);;
+  color:lightgray; 
 }

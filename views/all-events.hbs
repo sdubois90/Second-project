@@ -6,12 +6,13 @@
 
   {{!-- Filters --}}
   <aside>
-    <h4>All Tags</h4>
+   
 
     <form id="filter-form">
-      <ul data-category="{{restrictions}}">
+       {{!-- <h4>All Tags</h4> --}}
+      <ul class="tag-ul" data-category="{{restrictions}}">
         {{#each tags}}
-        <li>
+        <li class="info-li">
           <label for="input_{{this._id}}">{{this.restrictions}}</label>
           <input name="restrictions" value="{{this._id}}" id="input_{{this._id}}" type="checkbox"
             data-tag-id="{{this._id}}">
@@ -38,7 +39,7 @@
     <div class="events-info">
 
       <img class="img_events_all" src="{{this.imgPath}}" alt="events_img">
-
+<div class="info-box">
       <h3>{{this.eventName}}</h3>
       <h4 class="events-title">{{this.type}}</h4>
       <h4>Date:</h4>
@@ -48,11 +49,12 @@
       <h4>Diet:</h4>
       <ul>
         {{#each restrictions}}
-        <li>{{this.restrictions}}</li>
+        <li class="events-info-list">{{this.restrictions}}</li>
         {{/each}}
       </ul>
 
       <p><a href="/event/{{this._id}}">See more</a></p>
+      </div>
     </div>
     {{/each}}
 

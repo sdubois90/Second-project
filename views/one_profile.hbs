@@ -1,20 +1,22 @@
 <section>
-    <div>
-        <img src="{{theUser.profilePicturePath}}" alt="">
-    </div>
-    <div id="form_part">
-        <h1>Here more about {{theUser.firstName}}</h1>
+    <div id="about">
         <div>
-            <label for="firstName">First name</label>
-            <p>{{theUser.firstName}}</p>
+            <img src="{{theUser.profilePicturePath}}" alt="">
         </div>
-        <div>
-            <label for="city">City</label>
-            <p>{{theUser.address.city}}</p>
-        </div>
-        <div>
-            <label class="about_me" for="description">About me</label>
-            <p>{{theUser.description}}</p>
+        <div id="form_part">
+            <h1>Here more about {{theUser.firstName}}</h1>
+            <div>
+                <label for="firstName">First name</label>
+                <p>{{theUser.firstName}}</p>
+            </div>
+            <div>
+                <label for="city">City</label>
+                <p>{{theUser.address.city}}</p>
+            </div>
+            <div>
+                <label class="about_me" for="description">About me</label>
+                <p>{{theUser.description}}</p>
+            </div>
         </div>
     </div>
 </section>

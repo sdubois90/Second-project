@@ -35,12 +35,13 @@ form {
 }
 
 input {
-    width: 80%;
+    width: 75%;
     height: 4vh;
     border: none;
     border-radius: 3px;
     /* background-color: RGB(255, 99, 71); */
     padding-left: 1vw;
+   
 }
 
 button {
@@ -51,6 +52,10 @@ button {
     background-color: RGB(255, 99, 71);
     color: white;
     margin: 0 auto;
+    margin-top: 1vh;
+    display: block;
+    cursor: pointer;
+
 }
 
 
@@ -74,4 +79,10 @@ a {
 
 label {
     font-weight: bold;
+    padding-right: 1vw;
+}
+
+p{
+    text-align: center;
+    padding-top: 1vh;
 }
