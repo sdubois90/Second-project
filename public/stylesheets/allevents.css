@@ -1,13 +1,17 @@
 
+
+body{
+  background-image: url("../images/salads.jpg");
+  background-size: cover;
+}
 .main-contents-events {
-    border: 1px solid black;
+
     font-family: Arial;
     display: block;
   }
   
   .title-div {
     padding-top:6vmin;
-    background-color: lightblue;
     color: white;
     text-align: center;
   }
@@ -47,7 +51,7 @@
   .events-wrapper{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
+    justify-content: space-evenly;
     padding: 10px;
     margin: 10px;
   }
@@ -56,18 +60,47 @@
     padding: 20px;
     text-align: center;
     margin: 1% !important;
-    width: 23%;
+    width: 30vw;
+    background-color: RGB(255, 255, 255, 0.8);
+    border-radius: 5px;
+   margin: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+  }
+
+  .events-info-list {
+    list-style: none;
     margin: auto;
-    border: 1px solid black;
   }
   
   .img_events_all {
-    height: 100px;
+    width: 150px;
+    height: auto;
   }
 
   p {
+    height: 45px;
+  }
 
-      height: 45px;
+  .info-box {
+    width: 15vw;
+    float: right;
 
   }
 
+  .tag-ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    list-style-position: inside;
+    width:60% !important;
+    margin: 0 auto;
+  }
+
+  .info-li {
+padding: 0;
+margin: 0 !important;
+
+  }

@@ -5,3 +5,19 @@ section {
     background-repeat: no-repeat;
     height: 100vh;
 }
+
+#textBox {
+    font-size: 10vh;
+    color: rgb(245, 245, 227);
+    text-align: center;
+    margin-top: 8vh;
+ 
+   
+}
+h2 {
+    text-align: center;
+    color: rgb(255, 255, 235);
+    margin: 1vh;
+    font-size: 2.4vh;
+  
+}

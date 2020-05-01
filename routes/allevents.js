@@ -83,8 +83,9 @@ router.get("/event/:id", (req, res) => {
       }
       console.log(isTheChef)
       res.render("one-event", {
+        styles: ["one-event.css"],
         event: dbResult,
-        isTheChef: isTheChef
+        isTheChef: isTheChef,
       });
     })
     .catch((dbErr) => {
