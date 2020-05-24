@@ -43,8 +43,14 @@ router.post('/signup', (req, res, next) => {
                     email,
                     password: hashPass,
                 })
-                .then(() => {
-                    res.redirect('/')
+                .then((dbResult) => {
+                    console.log(dbResult)
+                    console.log(password)
+                    res.render('login', {
+                        styles: ["signup_login_style.css"],
+                        signUpInfo: dbResult,
+                        password: password
+                    });
                 })
                 .catch((err) => {
                     console.log(err)

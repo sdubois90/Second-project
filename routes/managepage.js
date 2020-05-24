@@ -29,9 +29,18 @@ router.get("/managepage", requireAuth, (req, res) => {
           guestEvents.push(allEvents[index])
         }
       }
-
       console.log(hostEvents);
       console.log(guestEvents);
+
+      // Voici comment accéder au nom de la restriction, car c'est un array
+      // console.log(guestEvents[0].restrictions[0].restrictions)
+
+      // Donc {{#each guestEvents}} {{#each this.restrictions}} <p>{{this.restrictions}}</p> {{/each}} {{/each}}
+      // Pour accéder au nom de la restriction appelé "restrictions"
+
+      // {{#each guestEvents}} {{#each this.restrictions}} <p>{{this._id}}</p> {{/each}} {{/each}}
+      // Pour accéder à chacun des id
+      
       res.render("manage-page", {
         guestEvents: guestEvents,
         hostEvents: hostEvents
@@ -74,7 +83,7 @@ router.post('/managepage/:id/deleteGuest', (req, res) => {
 });
 
 router.get('/myevent/edit/:id', (req, res) => {
-  Promise.all([Event.findById(req.params.id).populate("restrictions"), Tag.find({})])
+  Promise.all([Event.findById(req.params.id), Tag.find({})])
     .then(dbResult => {
       res.render('edit_event.hbs', {
         event: dbResult[0],
@@ -109,7 +118,7 @@ router.post("/myevent/edit/:id", requireAuth, upload.single("imgPath"), (req, re
       main: req.body.main,
       dessert: req.body.dessert
     },
-    dateOfEvent: req.body.date,
+    dateOfEvent: req.body.dateOfEvent,
     location: {
       street: req.body.street,
       city: req.body.city

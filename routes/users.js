@@ -26,19 +26,6 @@ router.get('/myprofile', requireAuth,(req, res,) => {
     })
 });
 
-router.get('/member/:id', requireAuth,(req, res) => {
-  User.findById(req.params.id)
-    .then((dbresult) => {
-      res.render('one_profile', {
-        styles: ["one_profile.css"],
-        theUser: dbresult
-      });
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-});
-
 router.post('/myprofile', requireAuth, upload.single("profilePicturePath"), (req, res) => {
   let modifiedUser = {
     firstName: req.body.firstName,
@@ -68,6 +55,18 @@ router.post('/myprofile', requireAuth, upload.single("profilePicturePath"), (req
 })
 
 
+router.get('/member/:id', requireAuth, (req, res) => {
+  User.findById(req.params.id)
+    .then((dbresult) => {
+      res.render('one_profile', {
+        styles: ["one_profile.css"],
+        theUser: dbresult
+      });
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+});
 
 
 module.exports = router;

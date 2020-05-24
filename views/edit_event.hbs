@@ -35,10 +35,9 @@
                 <h3>Food restrictions</h3>
                 {{!-- <label for="restrictions">Food restrictions</label> --}}
                 <select multiple name="restrictions">
-                    <option value="-1" disabled selected>None</option>
+                    {{!-- <option value="-1" disabled selected>None</option> --}}
                     {{#each tags}}
-                    <option {{isSelected ../event.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}
-                    </option>
+                    <option {{isSelected ../event.restrictions this._id}} value="{{this._id}}">{{this.restrictions}}                    </option>
                     {{/each}}
                 </select>
             </div>
@@ -47,8 +46,7 @@
             <div>
                 <h3>Date of the event</h3>
                 {{!-- <label for="date">Date of the event</label> --}}
-                <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="{{event.date}} "
-                    required>
+                <input type="date" id="date" name="date" max="2020-12-31" min="2020-01-01" value="{{event.dateOfEvent}}" required>
             </div>
             <div>
                 <h3>Address of the event: street and city</h3>

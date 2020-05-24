@@ -36,11 +36,18 @@
         <h3>{{this.eventName}}</h3>
         <h4 class="events-title">{{this.type}}</h4>
         <h4>Date</h4>
-        {{!-- <p>{{this.dateOfEvent}}</p> --}}<p>May 03 2020 09:30</p>
+        <p>{{this.dateOfEvent}}</p>
+        {{!-- <p>May 03 2020 09:30</p> --}}
         
         
         <h4>Location</h4>
         <p>{{this.location.city}}</p>
+                {{#if this.restrictions}}
+                <h4>Restrictions</h4>
+                {{#each this.restrictions}}
+                <p>{{this.restrictions}}</p>
+                {{/each}}
+                {{/if}}
       <div class="button-flex">
         <button class="button marg"><a class="link" href="/myevent/edit/{{this._id}}">Edit</a></button>
         <button class="button marg"><a class="link" href="/event/{{this._id}}">Details</a></button>
@@ -61,13 +68,16 @@
         <h4>Host</h4>
         <p>{{this.chef.firstName}}</p>
         <h4>Date</h4>
-        {{!-- <p>{{this.dateOfEvent}}</p> --}}<p>May 03 2020 09:30</p>
+        <p>{{this.dateOfEvent}}</p>
+        {{!-- <p>May 03 2020 09:30</p> --}}
         <h4>Location</h4>
         <p>{{this.location.city}}</p>
-        {{!-- {{#if this.restrictions}} --}}
-        {{!-- <h4>Restrictions</h4> --}}
-        {{!-- <p>{{this.restrictions.restrictions}}</p> --}}
-        {{!-- {{/if}} --}}
+        {{#if this.restrictions}}
+        <h4>Restrictions</h4>
+        {{#each this.restrictions}}
+        <p>{{this.restrictions}}</p>
+        {{/each}}
+        {{/if}}
         <div class="button-flex">
           <button class="button2 marg"><a class="link" href="/event/{{this._id}}">Details</a></button>
 

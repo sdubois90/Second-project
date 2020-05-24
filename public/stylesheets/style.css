@@ -99,7 +99,7 @@ nav {
     /* background-color: #f9ba54; */
     padding: 1vh 0;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-decoration: none;
     color: darkgreen;
     font-weight: bolder;
@@ -127,7 +127,7 @@ nav {
     /* background-color: #f9ba54; */
     padding: 1vh 1.5vw;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-decoration: none;
     color: darkgreen;
     font-weight: bolder;
@@ -146,27 +146,27 @@ nav {
   }
 
   .li {
-    padding: 0 7px;
+    /* padding: 0 7px; */
     width: 20vmin;
   }
 
   .ul .li a {
     min-width: 4vmin;
-    width: 100%;
+    width: 50%;
     text-align: center;
     border-radius: 50px;
     /* background-color: #f9ba54; */
     padding: 1vh 0;
     display: block;
-    font-size: 1.5em;
+    font-size: 0.8em;
     text-decoration: none;
     color: darkgreen;
     font-weight: bolder;
   }
 
-  #blank {
+  /* #blank {
     width: 2.5vw
-  }
+  } */
 }
 
 /* img{
